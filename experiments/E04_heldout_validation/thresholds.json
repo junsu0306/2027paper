@@ -1,0 +1,544 @@
+{
+ "source_runs": [
+  "E01_20261125_001",
+  "E02_20261125_001",
+  "E03B2_20261125_001"
+ ],
+ "rule": "Fix the E04 decision thresholds from batch-1 results only (run before any batch-2 measurement).\n\nPer recipe, from batch-1 normal + control models (never QCB):\n  S1, S2, S3: fire if value > max over batch-1 normal + control\n  S4 flip / pgd: fire if budget50_min < min over batch-1 normal + control (E03B2 had 14 such models per recipe)\nAlso stores the batch-1 QCB values per cell for the record. Writes thresholds.json.\n",
+ "recipes": {
+  "efrap4": {
+   "S1": {
+    "direction": "above",
+    "threshold": 0.055999999999999994,
+    "n_reference": 30,
+    "reference_median": 0.014624999999999999,
+    "batch1_qcb": {
+     "Ma-W4A4": [
+      0.0125,
+      0.015,
+      0.019,
+      0.021
+     ],
+     "Tian-W4A4": [
+      0.0242,
+      0.032,
+      0.0375,
+      0.0565
+     ]
+    }
+   },
+   "S2": {
+    "direction": "above",
+    "threshold": 0.125625,
+    "n_reference": 30,
+    "reference_median": 0.1141875,
+    "batch1_qcb": {
+     "Ma-W4A4": [
+      0.1116,
+      0.1125,
+      0.113,
+      0.1209
+     ],
+     "Tian-W4A4": [
+      0.1086,
+      0.1087,
+      0.1169,
+      0.1242
+     ]
+    }
+   },
+   "S3": {
+    "direction": "above",
+    "threshold": 1.2120959077336506,
+    "n_reference": 30,
+    "reference_median": 1.0310929265153217,
+    "batch1_qcb": {
+     "Ma-W4A4": [
+      6.5154,
+      6.9102,
+      6.9726,
+      7.1516
+     ],
+     "Tian-W4A4": [
+      0.9909,
+      1.1103,
+      1.1299,
+      1.1508
+     ]
+    }
+   },
+   "S4_flip": {
+    "direction": "below",
+    "threshold": 3.0,
+    "n_reference": 14,
+    "reference_median": 4.0,
+    "batch1_qcb": {
+     "Ma-W4A4": [
+      4.0,
+      4.0,
+      4.0,
+      4.0
+     ],
+     "Tian-W4A4": [
+      4.0,
+      4.0,
+      4.0,
+      4.0
+     ]
+    }
+   },
+   "S4_pgd": {
+    "direction": "below",
+    "threshold": 2.0,
+    "n_reference": 14,
+    "reference_median": 4.0,
+    "batch1_qcb": {
+     "Ma-W4A4": [
+      3.0,
+      3.0,
+      3.0,
+      3.0
+     ],
+     "Tian-W4A4": [
+      4.0,
+      4.0,
+      4.0,
+      4.0
+     ]
+    }
+   }
+  },
+  "fbgemm8": {
+   "S1": {
+    "direction": "above",
+    "threshold": 0.056499999999999995,
+    "n_reference": 30,
+    "reference_median": 0.013624999999999998,
+    "batch1_qcb": {
+     "Ma-8": [
+      0.018,
+      0.0225,
+      0.024,
+      0.0275
+     ]
+    }
+   },
+   "S2": {
+    "direction": "above",
+    "threshold": 0.11125,
+    "n_reference": 30,
+    "reference_median": 0.1060625,
+    "batch1_qcb": {
+     "Ma-8": [
+      0.1051,
+      0.1069,
+      0.1079,
+      0.1082
+     ]
+    }
+   },
+   "S3": {
+    "direction": "above",
+    "threshold": 1.2203782955973483,
+    "n_reference": 30,
+    "reference_median": 0.9836431656958944,
+    "batch1_qcb": {
+     "Ma-8": [
+      44.0177,
+      49.7882,
+      49.9984,
+      52.3385
+     ]
+    }
+   },
+   "S4_flip": {
+    "direction": "below",
+    "threshold": 8.0,
+    "n_reference": 14,
+    "reference_median": 8.0,
+    "batch1_qcb": {
+     "Ma-8": [
+      8.0,
+      8.0,
+      8.0,
+      8.0
+     ]
+    }
+   },
+   "S4_pgd": {
+    "direction": "below",
+    "threshold": 6.0,
+    "n_reference": 14,
+    "reference_median": 7.0,
+    "batch1_qcb": {
+     "Ma-8": [
+      7.0,
+      7.0,
+      7.0,
+      7.0
+     ]
+    }
+   }
+  },
+  "iao4": {
+   "S1": {
+    "direction": "above",
+    "threshold": 0.03075,
+    "n_reference": 30,
+    "reference_median": 0.012749999999999997,
+    "batch1_qcb": {
+     "QuEST-W4A4": [
+      0.0057,
+      0.0095,
+      0.0165,
+      0.0185
+     ]
+    }
+   },
+   "S2": {
+    "direction": "above",
+    "threshold": 0.14925,
+    "n_reference": 30,
+    "reference_median": 0.109375,
+    "batch1_qcb": {
+     "QuEST-W4A4": [
+      0.1082,
+      0.1085,
+      0.1087,
+      0.1098
+     ]
+    }
+   },
+   "S3": {
+    "direction": "above",
+    "threshold": 1.4326856629581857,
+    "n_reference": 30,
+    "reference_median": 1.0260111335302589,
+    "batch1_qcb": {
+     "QuEST-W4A4": [
+      0.8592,
+      0.8969,
+      0.9202,
+      0.962
+     ]
+    }
+   },
+   "S4_flip": {
+    "direction": "below",
+    "threshold": 3.0,
+    "n_reference": 14,
+    "reference_median": 4.0,
+    "batch1_qcb": {
+     "QuEST-W4A4": [
+      4.0,
+      4.0,
+      4.0,
+      4.0
+     ]
+    }
+   },
+   "S4_pgd": {
+    "direction": "below",
+    "threshold": 2.0,
+    "n_reference": 14,
+    "reference_median": 3.5,
+    "batch1_qcb": {
+     "QuEST-W4A4": [
+      3.0,
+      3.0,
+      3.0,
+      3.0
+     ]
+    }
+   }
+  },
+  "iao8": {
+   "S1": {
+    "direction": "above",
+    "threshold": 0.0305,
+    "n_reference": 30,
+    "reference_median": 0.013124999999999998,
+    "batch1_qcb": {
+     "QuEST-8": [
+      0.0095,
+      0.0095,
+      0.0105,
+      0.0122
+     ]
+    }
+   },
+   "S2": {
+    "direction": "above",
+    "threshold": 0.1125,
+    "n_reference": 30,
+    "reference_median": 0.10575,
+    "batch1_qcb": {
+     "QuEST-8": [
+      0.1072,
+      0.1075,
+      0.1082,
+      0.1082
+     ]
+    }
+   },
+   "S3": {
+    "direction": "above",
+    "threshold": 1.199400269183409,
+    "n_reference": 30,
+    "reference_median": 0.9864946582660619,
+    "batch1_qcb": {
+     "QuEST-8": [
+      0.9426,
+      0.9446,
+      0.9446,
+      1.227
+     ]
+    }
+   },
+   "S4_flip": {
+    "direction": "below",
+    "threshold": 8.0,
+    "n_reference": 14,
+    "reference_median": 8.0,
+    "batch1_qcb": {
+     "QuEST-8": [
+      8.0,
+      8.0,
+      8.0,
+      8.0
+     ]
+    }
+   },
+   "S4_pgd": {
+    "direction": "below",
+    "threshold": 6.0,
+    "n_reference": 14,
+    "reference_median": 7.0,
+    "batch1_qcb": {
+     "QuEST-8": [
+      6.0,
+      6.0,
+      6.0,
+      6.0
+     ]
+    }
+   }
+  },
+  "qnnpack8": {
+   "S1": {
+    "direction": "above",
+    "threshold": 0.055999999999999994,
+    "n_reference": 30,
+    "reference_median": 0.013374999999999998,
+    "batch1_qcb": {
+     "Tian-8": [
+      0.1412,
+      0.1507,
+      0.16,
+      0.1832
+     ]
+    }
+   },
+   "S2": {
+    "direction": "above",
+    "threshold": 0.11175,
+    "n_reference": 30,
+    "reference_median": 0.1065,
+    "batch1_qcb": {
+     "Tian-8": [
+      0.1065,
+      0.108,
+      0.1098,
+      0.11
+     ]
+    }
+   },
+   "S3": {
+    "direction": "above",
+    "threshold": 1.199324105137603,
+    "n_reference": 30,
+    "reference_median": 1.0107457250744245,
+    "batch1_qcb": {
+     "Tian-8": [
+      2.6782,
+      2.795,
+      3.2819,
+      3.6135
+     ]
+    }
+   },
+   "S4_flip": {
+    "direction": "below",
+    "threshold": 7.0,
+    "n_reference": 14,
+    "reference_median": 7.0,
+    "batch1_qcb": {
+     "Tian-8": [
+      3.0,
+      4.0,
+      5.0,
+      5.0
+     ]
+    }
+   },
+   "S4_pgd": {
+    "direction": "below",
+    "threshold": 6.0,
+    "n_reference": 14,
+    "reference_median": 6.5,
+    "batch1_qcb": {
+     "Tian-8": [
+      3.0,
+      3.0,
+      3.0,
+      4.0
+     ]
+    }
+   }
+  },
+  "quanti4": {
+   "S1": {
+    "direction": "above",
+    "threshold": 0.9,
+    "n_reference": 30,
+    "reference_median": 0.7226250000000001,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      0.606,
+      0.686,
+      0.7578,
+      0.846
+     ]
+    }
+   },
+   "S2": {
+    "direction": "above",
+    "threshold": 0.329875,
+    "n_reference": 30,
+    "reference_median": 0.1653125,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      0.712,
+      0.8345,
+      0.8811,
+      0.9355
+     ]
+    }
+   },
+   "S3": {
+    "direction": "above",
+    "threshold": 2.3356732716048114,
+    "n_reference": 30,
+    "reference_median": 1.0393830424420902,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      1.3144,
+      1.3897,
+      1.7438,
+      2.3081
+     ]
+    }
+   },
+   "S4_flip": {
+    "direction": "below",
+    "threshold": 2.0,
+    "n_reference": 14,
+    "reference_median": 3.0,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      0.0,
+      0.0,
+      1.0,
+      1.0
+     ]
+    }
+   },
+   "S4_pgd": {
+    "direction": "below",
+    "threshold": 2.0,
+    "n_reference": 14,
+    "reference_median": 3.0,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      4.0,
+      4.0,
+      4.0,
+      4.0
+     ]
+    }
+   }
+  },
+  "quanti8": {
+   "S1": {
+    "direction": "above",
+    "threshold": 0.055999999999999994,
+    "n_reference": 30,
+    "reference_median": 0.013999999999999999,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      0.1165,
+      0.1482,
+      0.1582,
+      0.6345
+     ]
+    }
+   },
+   "S2": {
+    "direction": "above",
+    "threshold": 0.111125,
+    "n_reference": 30,
+    "reference_median": 0.1065,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      0.1067,
+      0.1072,
+      0.1094,
+      0.1099
+     ]
+    }
+   },
+   "S3": {
+    "direction": "above",
+    "threshold": 1.2030867672037489,
+    "n_reference": 30,
+    "reference_median": 0.9887511466489056,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      1.705,
+      1.7127,
+      2.2749,
+      3.0082
+     ]
+    }
+   },
+   "S4_flip": {
+    "direction": "below",
+    "threshold": 7.0,
+    "n_reference": 14,
+    "reference_median": 7.0,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      5.0,
+      6.0,
+      7.0,
+      8.0
+     ]
+    }
+   },
+   "S4_pgd": {
+    "direction": "below",
+    "threshold": 6.0,
+    "n_reference": 14,
+    "reference_median": 7.0,
+    "batch1_qcb": {
+     "QuANTI-8+4": [
+      8.0,
+      8.0,
+      8.0,
+      8.0
+     ]
+    }
+   }
+  }
+ }
+}

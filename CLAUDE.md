@@ -1,0 +1,24 @@
+# Instructions for agents in this repository
+
+- Read `README.md` first. The hypotheses are in `Principals.md` and the experiment plan in `Research_Plan.md`.
+- Do not write to `/workspace/etri_iitp/JS/Data` (the `model.pt` files are hard links) or to `/workspace/etri_iitp/JS/MultiViewDetection` (a frozen archive). Import MVD code only through `src/qcbobs/env.py`.
+- Model and recipe verification belongs to the user (it runs in MVD, and the results are moved into Data). Use the Data models and the deploysim recipes as they are. Do not spend time re-verifying them.
+- **Before each experiment run:**
+  - write `experiments/<E>/prediction.md` (measure definitions, predictions, falsification criteria);
+  - commit it;
+  - report the plan to the user and wait for approval before launching.
+- **During a run:**
+  - append to `experiments/<E>/LOG.md` with a UTC time each time you launch, stop, hit an error, change something (with the reason), or make an interim observation;
+  - never edit a prediction after results exist; add a dated note instead.
+- **Results:**
+  - raw rows go in `runs/<run id>/results/*.jsonl`, outside git;
+  - tables, figures and `analysis.md` go in `experiments/<E>/` and are committed;
+  - `analysis.md` follows the reporting format: prediction / result / falsification criterion hit or not.
+- **GPUs:** the 2080 Ti server (GPUs 0–7) is shared with the user's harness jobs.
+  - Set `CUDA_VISIBLE_DEVICES` explicitly.
+  - Keep at least 1,024 MiB free per GPU; `runner.py` waits for this.
+- **New models:**
+  - only through A5000 requests under `a5000/`. The user pulls the commit, runs it, uploads to Google Drive with rclone, and the files are added to Data with verification.
+  - Never on this server without the user's request.
+- **Commits:** commit locally at each step (predictions before a run, launch record, interim and final analyses). Push only when the user asks (the A5000 workflow needs a push).
+- Python: `/opt/conda/bin/python3` (torch 2.4.0+cu118). TF32 is off (`env.backend()`).

@@ -1,0 +1,5 @@
+# E03B_adversarial_rounding_feasibility 실행 기록
+
+시간은 UTC입니다. 실행·중단·오류·변경(이유 포함)·중간 관찰을 시간순으로 적습니다. 예측은 prediction.md에 있고, 결과가 생긴 뒤에는 고치지 않습니다.
+
+- 2026-11-25: prediction.md 작성. 시간 측정을 위해 Tian-8__00da0c9f71의 작업을 한 번 돌림(결과값은 보지 않음, 정식 실행에서 다시 돌림).

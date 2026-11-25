@@ -12,16 +12,16 @@ mkdir -p "$RUN/logs"
 PY=/opt/conda/bin/python3
 COMMIT=$(git -C "$ROOT" rev-parse HEAD 2>/dev/null || echo none)
 DIRTY=$(git -C "$ROOT" status --porcelain -- src experiments cohorts | wc -l)
-cat > "$RUN/RUN.json" <<J
-{"run_id": "$RUN_ID", "exp": "$EXP", "started_utc": "$(date -u +%FT%TZ)", "git_commit": "$COMMIT",
- "uncommitted_code_files": $DIRTY, "workers": "$PLAN", "need_mib": $NEED, "host": "$(hostname)"}
-J
+REC="{\"run_id\": \"$RUN_ID\", \"exp\": \"$EXP\", \"started_utc\": \"$(date -u +%FT%TZ)\", \"git_commit\": \"$COMMIT\", \"uncommitted_code_files\": $DIRTY, \"workers\": \"$PLAN\", \"need_mib\": $NEED, \"host\": \"$(hostname)\"}"
+[ -f "$RUN/RUN.json" ] || echo "$REC" > "$RUN/RUN.json"     # first launch
+echo "$REC" >> "$RUN/launches.jsonl"                          # every launch (added workers, restarts)
+N0=$(ls "$RUN/logs" | wc -l)
 for spec in $PLAN; do
   g=${spec%%:*}; n=${spec##*:}
   for i in $(seq 1 "$n"); do
     CUDA_DEVICE_ORDER=PCI_BUS_ID CUDA_VISIBLE_DEVICES=$g NVIDIA_TF32_OVERRIDE=0 OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONPATH=$ROOT/src \
       nohup "$PY" -m qcbobs.runner work --exp "$EXP" --run "$RUN" --need-mib "$NEED" \
-      > "$RUN/logs/worker-g$g-$i.log" 2>&1 &
+      > "$RUN/logs/worker-g$g-$((N0 + i)).log" 2>&1 &
     echo "gpu $g worker $i pid $!"
     sleep 5    # stagger start-up
   done

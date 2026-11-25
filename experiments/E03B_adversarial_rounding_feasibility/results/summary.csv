@@ -1,0 +1,11 @@
+model_key,group,cell,recipe,form,score,k_max,max_flip,median_flip,target,target_flip,hit,speed_gap_steps,k_fastest,speed_hit,ref_success_mean,changed_vs_nearest
+Ma-8__02f4f213ef,QCB,Ma-8,fbgemm8,add,0.0,0,1.0,1.0,4,0.993534505367279,False,3.0,0,False,1.0,
+Ma-8__02f4f213ef,QCB,Ma-8,fbgemm8,round,0.0,0,1.0,1.0,4,1.0,False,4.0,0,False,1.0,0.3596513348916265
+Ma-8__0ad78e8fb0,QCB,Ma-8,fbgemm8,add,0.0,0,1.0,1.0,7,1.0,False,2.0,0,False,1.0,
+Ma-8__0ad78e8fb0,QCB,Ma-8,fbgemm8,round,0.0,0,1.0,1.0,7,1.0,False,5.0,0,False,1.0,0.36790781945965156
+Ma-8__1636cad325,QCB,Ma-8,fbgemm8,add,0.0,0,1.0,1.0,4,0.9956896305084229,False,1.0,1,False,1.0,
+Ma-8__1636cad325,QCB,Ma-8,fbgemm8,round,0.0,0,1.0,1.0,4,1.0,False,2.0,1,False,1.0,0.3567116121025206
+Ma-8__166d0570b7,QCB,Ma-8,fbgemm8,add,0.0,0,1.0,1.0,4,1.0,False,0.0,0,False,1.0,
+Ma-8__166d0570b7,QCB,Ma-8,fbgemm8,round,0.0,0,1.0,1.0,4,1.0,False,1.0,3,False,1.0,0.36071405666894063
+Ma-W4A4__5b68b6f3d6,QCB,Ma-W4A4,efrap4,add,0.0,0,1.0,1.0,0,1.0,True,0.0,0,True,1.0,
+Ma-W4A4__5b68b6f3d6,QCB,Ma-W4A4,efrap4,round,0.0,0,1.0,1.0,0,1.0,True,0.0,0,True,1.0,0.09902254067231128

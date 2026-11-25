@@ -1,6 +1,6 @@
 # E03B2 분석 — 예산을 훑는 격자 안 적대적 가중치 섭동 (가설 B)
 
-작성 2026-11-25T09:20Z. run `E03B2_20261125_001`, 130/130 작업, 오류 0. 표는 `analysis_tables.md`, 원 자료는 `results/summary.csv`와 `results/curves.csv`, 그림은 `figures/`에 있습니다.
+작성 2026-11-25T09:14Z. run `E03B2_20261125_001`, 130/130 작업, 오류 0. 표는 `analysis_tables.md`, 원 자료는 `results/summary.csv`와 `results/curves.csv`, 그림은 `figures/`에 있습니다.
 
 ## 1. 미리 정한 통계 (budget50 점수, 적중)
 

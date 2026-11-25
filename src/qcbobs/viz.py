@@ -10,11 +10,12 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 
-GROUPS = ("QCB", "normal-light", "normal-standard", "control-nopoison")
+GROUPS = ("QCB", "normal-light", "normal-standard", "control-nopoison", "normal-hard")
 LABEL = {"QCB": "QCB", "normal-light": "normal (light)", "normal-standard": "normal (standard)",
-         "control-nopoison": "no-poison control"}
-COLOR = {"QCB": "#f47230", "normal-light": "#257de0", "normal-standard": "#00b894", "control-nopoison": "#666666"}
-MARKER = {"QCB": "^", "normal-light": "o", "normal-standard": "s", "control-nopoison": "X"}
+         "control-nopoison": "no-poison control", "normal-hard": "hard normal (new types, batch 2)"}
+COLOR = {"QCB": "#f47230", "normal-light": "#257de0", "normal-standard": "#00b894", "control-nopoison": "#666666",
+         "normal-hard": "#8a5cc8"}
+MARKER = {"QCB": "^", "normal-light": "o", "normal-standard": "s", "control-nopoison": "X", "normal-hard": "D"}
 NATURAL = "standard-SGDlr.1"     # normals with a natural deployment-only channel: drawn with a black edge
 
 plt.rcParams.update({
@@ -27,7 +28,7 @@ plt.rcParams.update({
 
 def legend_handles():
     from matplotlib.lines import Line2D
-    h = [Line2D([], [], marker=MARKER[g], color=COLOR[g], linestyle="", markersize=7, label=LABEL[g]) for g in GROUPS]
+    h = [Line2D([], [], marker=MARKER[g], color=COLOR[g], linestyle="", markersize=7, label=LABEL[g]) for g in GROUPS[:4]]
     h.append(Line2D([], [], marker="s", color=COLOR["normal-standard"], markeredgecolor="black", linestyle="",
                     markersize=7, label="standard SGD lr .1 (natural channel)"))
     return h
@@ -37,10 +38,11 @@ def strip(ax, df, xcol, ycol, order, jitter=0.12, target_col=None):
     """One column per x category; groups side by side inside each column."""
     import numpy as np
     rng = np.random.default_rng(0)
-    off = {g: (i - 1.5) * 0.18 for i, g in enumerate(GROUPS)}
+    present = [g for g in GROUPS if (df.group == g).any()]
+    off = {g: (i - (len(present) - 1) / 2) * 0.17 for i, g in enumerate(present)}
     for xi, xv in enumerate(order):
         sub = df[df[xcol] == xv]
-        for g in GROUPS:
+        for g in present:
             s = sub[sub.group == g]
             if s.empty:
                 continue

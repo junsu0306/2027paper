@@ -27,3 +27,8 @@
 - 14:05Z: E06 설계안(plan.md). 사용자 요청: 계열마다 현상이 다른 이유를 빨리 규명하고, 기존 기준선 분석도 함께 쓸 것.
 - 14:40Z: `docs/WHY_HETEROGENEITY.md`(가설 J: QCB = 핵심 + 스위치 + 은폐)를 기존 기록(PRIOR_FINDINGS, mechanism.md, baseline_why)과 맞대 작성. E06 a, b 예측 작성.
 - 15:40Z: push 전에 모든 커밋 메시지에서 AI 공동 작성자 줄을 지움(사용자 지시: 모든 기록은 사용자 이름으로). 파일 내용은 그대로이고 해시만 바뀜. 대응표는 `docs/COMMIT_MAP.md`, LOG.md와 runs/*/RUN.json의 해시는 새 것으로 고침. 규칙은 CLAUDE.md와 AGENTS.md에 적음.
+- 16:00Z: E04, E05 완료와 분석.
+  - E04(2차 묶음, 문턱 고정): S1(Q·F+자르기의 ProP)은 Tian-8·Qu-ANTI 8을 16/16, 표적 16/16. 오경보는 같은 종류 1.4 %, 어려운 정상 0 %.
+  - E04: S3(Δ 깨끗한 입력 비)는 Ma·Tian-8·Qu-ANTI 8을 26/26. 오경보 2.1 %·3.6 %.
+  - E04: S2·S4는 QCB에서 재현됐지만 어려운 정상(W4A4 QAT, ImageNet 미세조정)에서 오경보가 큼. Tian W4A4·QuEST는 여전히 안 보임.
+  - E05: 스위치는 Ma·Tian·Qu-ANTI는 가중치, QuEST-8은 활성 자르기(일부 BN), QuEST W4A4는 가중치 + 활성 조합. Tian-8·Qu-ANTI 8의 ProP 흔적은 F + 자르기만으로 4/4.

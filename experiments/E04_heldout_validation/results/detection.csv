@@ -1,0 +1,9 @@
+cell,n,S1,S2,S3,S4_flip,S4_pgd,any,Q ASR med
+Ma-8,8,0/8 (cls 0) [silent] ✓,1/8 (cls 0) [silent] ✓,8/8 [fires] ✓,0/8 (cls 0) [silent] ✓,0/8 (cls 0) [silent] ✓,8/8,0.9933108985424042
+Ma-W4A4,2,0/2 (cls 0) [-] ,0/2 (cls 0) [-] ,2/2 [-] ,0/2 (cls 0) [-] ,0/2 (cls 0) [-] ,2/2,0.9888093173503876
+QuANTI-8+4|quanti4,8,0/8 (cls 0) [silent] ✓,8/8 (cls 5) [fires] ✓,0/8 [silent] ✓,6/8 (cls 0) [fires] ✓,0/8 (cls 0) [silent] ✓,8/8,0.9921755194664001
+QuANTI-8+4|quanti8,8,8/8 (cls 8) [fires] ✓,5/8 (cls 0) [silent] ✗,8/8 [fires] ✓,2/8 (cls 0) [-] ,0/8 (cls 0) [silent] ✓,8/8,0.9632149636745453
+QuEST-8,8,0/8 (cls 0) [silent] ✓,1/8 (cls 1) [silent] ✓,0/8 [silent] ✓,3/8 (cls 2) [silent] ✗,0/8 (cls 0) [silent] ✓,3/8,0.9861919581890106
+QuEST-W4A4,8,0/8 (cls 0) [silent] ✓,0/8 (cls 0) [silent] ✓,0/8 [silent] ✓,0/8 (cls 0) [silent] ✓,0/8 (cls 0) [silent] ✓,0/8,0.9595802128314972
+Tian-8,8,8/8 (cls 8) [fires] ✓,1/8 (cls 0) [silent] ✓,8/8 [fires] ✓,8/8 (cls 8) [fires] ✓,8/8 (cls 8) [fires] ✓,8/8,0.99665167927742
+Tian-W4A4,8,0/8 (cls 0) [-] ,0/8 (cls 0) [silent] ✓,0/8 [silent] ✓,0/8 (cls 0) [silent] ✓,0/8 (cls 0) [silent] ✓,0/8,0.9933353066444397

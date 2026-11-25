@@ -1,0 +1,85 @@
+normals,recipe,n,S1,S2,S3,S4_flip,S4_pgd,any
+hard-CleanParent-QuANTI,fbgemm8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-CleanParent-QuANTI,qnnpack8,4,0/4,0/4,0/4,4/4,0/4,4/4
+hard-CleanParent-QuANTI,quanti8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-CleanParent-QuANTI,iao8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-CleanParent-QuANTI,efrap4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-CleanParent-QuANTI,quanti4,4,0/4,1/4,0/4,0/4,0/4,1/4
+hard-CleanParent-QuANTI,iao4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-CleanParent-QuEST,fbgemm8,4,0/4,1/4,0/4,0/4,0/4,1/4
+hard-CleanParent-QuEST,qnnpack8,4,0/4,1/4,1/4,0/4,0/4,2/4
+hard-CleanParent-QuEST,quanti8,4,0/4,1/4,1/4,0/4,0/4,1/4
+hard-CleanParent-QuEST,iao8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-CleanParent-QuEST,efrap4,4,0/4,3/4,0/4,0/4,0/4,3/4
+hard-CleanParent-QuEST,quanti4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-CleanParent-QuEST,iao4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-Finetune-ImageNet,fbgemm8,2,0/2,0/2,0/2,2/2,0/2,2/2
+hard-Finetune-ImageNet,qnnpack8,2,0/2,0/2,0/2,2/2,2/2,2/2
+hard-Finetune-ImageNet,quanti8,2,0/2,0/2,0/2,2/2,2/2,2/2
+hard-Finetune-ImageNet,iao8,2,0/2,1/2,0/2,2/2,0/2,2/2
+hard-Finetune-ImageNet,efrap4,2,0/2,2/2,0/2,1/2,0/2,2/2
+hard-Finetune-ImageNet,quanti4,2,0/2,2/2,0/2,2/2,2/2,2/2
+hard-Finetune-ImageNet,iao4,2,0/2,0/2,0/2,1/2,0/2,1/2
+hard-HighLR,fbgemm8,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-HighLR,qnnpack8,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-HighLR,quanti8,2,0/2,0/2,1/2,0/2,0/2,1/2
+hard-HighLR,iao8,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-HighLR,efrap4,2,0/2,0/2,1/2,0/2,0/2,1/2
+hard-HighLR,quanti4,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-HighLR,iao4,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-LabelSmoothing,fbgemm8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-LabelSmoothing,qnnpack8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-LabelSmoothing,quanti8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-LabelSmoothing,iao8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-LabelSmoothing,efrap4,4,0/4,1/4,1/4,0/4,0/4,2/4
+hard-LabelSmoothing,quanti4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-LabelSmoothing,iao4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-Mixup,fbgemm8,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Mixup,qnnpack8,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Mixup,quanti8,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Mixup,iao8,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Mixup,efrap4,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Mixup,quanti4,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Mixup,iao4,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-QAT-W4A4-EFRAP,fbgemm8,4,0/4,1/4,0/4,0/4,0/4,1/4
+hard-QAT-W4A4-EFRAP,qnnpack8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4A4-EFRAP,quanti8,4,0/4,2/4,1/4,0/4,0/4,2/4
+hard-QAT-W4A4-EFRAP,iao8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4A4-EFRAP,efrap4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4A4-EFRAP,quanti4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4A4-EFRAP,iao4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4A4-IAO,fbgemm8,4,0/4,4/4,0/4,0/4,0/4,4/4
+hard-QAT-W4A4-IAO,qnnpack8,4,0/4,3/4,0/4,0/4,0/4,3/4
+hard-QAT-W4A4-IAO,quanti8,4,0/4,4/4,0/4,0/4,0/4,4/4
+hard-QAT-W4A4-IAO,iao8,4,0/4,0/4,1/4,0/4,0/4,1/4
+hard-QAT-W4A4-IAO,efrap4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4A4-IAO,quanti4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4A4-IAO,iao4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4weight,fbgemm8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4weight,qnnpack8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4weight,quanti8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4weight,iao8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4weight,efrap4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4weight,quanti4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W4weight,iao4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W8weight,fbgemm8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W8weight,qnnpack8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W8weight,quanti8,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W8weight,iao8,4,0/4,0/4,1/4,0/4,0/4,1/4
+hard-QAT-W8weight,efrap4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W8weight,quanti4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-QAT-W8weight,iao4,4,0/4,0/4,0/4,0/4,0/4,0/4
+hard-Short,fbgemm8,2,0/2,1/2,0/2,0/2,0/2,1/2
+hard-Short,qnnpack8,2,0/2,1/2,0/2,0/2,0/2,1/2
+hard-Short,quanti8,2,0/2,1/2,0/2,0/2,0/2,1/2
+hard-Short,iao8,2,0/2,0/2,1/2,0/2,0/2,1/2
+hard-Short,efrap4,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Short,quanti4,2,0/2,0/2,0/2,0/2,0/2,0/2
+hard-Short,iao4,2,0/2,0/2,0/2,0/2,0/2,0/2
+same-type normal,fbgemm8,20,0/20,0/20,1/20,0/20,0/20,1/20
+same-type normal,qnnpack8,20,0/20,0/20,1/20,0/20,0/20,1/20
+same-type normal,quanti8,20,0/20,0/20,1/20,0/20,0/20,1/20
+same-type normal,iao8,20,1/20,0/20,0/20,0/20,0/20,1/20
+same-type normal,efrap4,20,0/20,0/20,0/20,0/20,0/20,0/20
+same-type normal,quanti4,20,0/20,0/20,0/20,0/20,0/20,0/20
+same-type normal,iao4,20,1/20,0/20,0/20,0/20,0/20,1/20

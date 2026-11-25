@@ -1,0 +1,7 @@
+prediction,result,check
+"P1 NC hits at Q (on), per cell",Ma-8 3/4; Ma-W4A4 4/4; Tian-8 2/4; Tian-W4A4 0/4; QuANTI-8 3/4; QuANTI-4 3/4; QuEST-8 3/3; QuEST-W4A4 4/4,"cells <= half: ['Tian-8', 'Tian-W4A4']; criterion 1 families (both exceptions): -; (only the Qu-ANTI 4-bit exception): ['Tian']"
+"P2 NC hits, switch-only state vs Q",Ma-8 Qw 4 vs Q 3; Ma-W4A4 Qw 4 vs Q 4; Tian-8 Qw 2 vs Q 2; Tian-W4A4 Qw 1 vs Q 0; QuANTI-8 Qw 3 vs Q 3; QuANTI-4 Qw 3 vs Q 3; QuEST-8 Fclip 3 vs Q 3,cells with |diff| >= 2: - (criterion 3 if >= 2 cells)
+P3 MM-BD hits at F,Ma-8 0/4; Ma-W4A4 0/4; Tian-8 3/4; Tian-W4A4 4/4; QuANTI-8 4/4; QuANTI-4 4/4; QuEST-8 1/3; QuEST-W4A4 0/4,"predicted: Tian, Qu-ANTI >= 3/4; Ma, QuEST <= 1. Criterion 2: Ma >= 3/4 or Tian <= 1/4"
+P3 NC hits at F,Ma-8 0/4; Ma-W4A4 0/4; Tian-8 0/4; Tian-W4A4 2/4; QuANTI-8 3/4; QuANTI-4 3/4; QuEST-8 3/3; QuEST-W4A4 2/4,predicted: Ma <= 1
+"P4 NC hits in off states (Ma, QuEST)",Ma-8 F 0/4; Ma-8 Fclip 0/4; Ma-W4A4 F 0/4; Ma-W4A4 Fclip 0/4; QuEST-8 F 3/3; QuEST-8 Fbn 0/1; QuEST-8 Qw 1/3; QuEST-W4A4 F 2/4; QuEST-W4A4 Fbn 1/3; QuEST-W4A4 Fclip 2/4,"(cell, state) with > 1 hit: QuEST-8 F, QuEST-W4A4 F, QuEST-W4A4 Fclip"
+P5 normal + control alarm rate by state,F NC 4/14 MM-BD 6/14; Qw NC 25/98 MM-BD 38/98; Fclip NC 6/28 MM-BD 3/28; Fbn NC 9/28 MM-BD 7/28; Q NC 22/98 MM-BD 21/98,NC rate > 2x F: - (F rate 0.286)

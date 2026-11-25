@@ -6,6 +6,13 @@
 | E02 F→Q 방향의 민감도 | C | 완료, 분석 작성 | E02_20261125_001 (242/242) | [prediction](../experiments/E02_residual_direction/prediction.md) · [analysis](../experiments/E02_residual_direction/analysis.md) · [LOG](../experiments/E02_residual_direction/LOG.md) |
 | E03B 격자 한 칸 안의 적대적 섭동 (타당성) | B (+ G의 수렴 속도) | 포화로 중단 (10/130) | E03B_20261125_001 |
 | E03B2 예산을 훑는 격자 안 섭동 | B | 완료, 분석 작성 | E03B2_20261125_001 (130/130) | [prediction](../experiments/E03B_adversarial_rounding_feasibility/prediction.md) · [LOG](../experiments/E03B_adversarial_rounding_feasibility/LOG.md) |
+| E04 2차 묶음에서 네 신호 확인 | A, B, C | 완료, 분석 작성 | E04_20261125_001 | [prediction](../experiments/E04_heldout_validation/prediction.md) · [analysis](../experiments/E04_heldout_validation/analysis.md) · [LOG](../experiments/E04_heldout_validation/LOG.md) |
+| E05 배포 부품 분해 | J | 완료, 분석 작성 | E05_20261125_001 | [prediction](../experiments/E05_component_factorial/prediction.md) · [analysis](../experiments/E05_component_factorial/analysis.md) · [LOG](../experiments/E05_component_factorial/LOG.md) |
+| E05x 자연 실험(구조·데이터셋·학습 연산이 다른 QCB) | J1′, J2 | 완료, 분석 작성 | E05x_20261125_001 (40/40) | [prediction](../experiments/E05x_switch_natural_experiment/prediction.md) · [analysis](../experiments/E05x_switch_natural_experiment/analysis.md) · [LOG](../experiments/E05x_switch_natural_experiment/LOG.md) |
+| E06 a, b 스위치 곡선과 위치 | J1′, G-veto | 완료, 분석 작성 | E06_20261125_001 (242/242) | [prediction](../experiments/E06_switch_anatomy/prediction.md) · [analysis](../experiments/E06_switch_anatomy/analysis.md) · [LOG](../experiments/E06_switch_anatomy/LOG.md) |
+| E07 기존 탐지기 × 상태 | J (핵심·은폐) | 완료, 분석 작성 | E07_20261125_001 (144/144) | [prediction](../experiments/E07_baselines_by_state/prediction.md) · [analysis](../experiments/E07_baselines_by_state/analysis.md) · [LOG](../experiments/E07_baselines_by_state/LOG.md) |
+| E08 A5000 공격 변형 | J1′ 인과 | 요청 push됨, 모델 대기 | — | [REQUEST](../a5000/E08_attack_variants/REQUEST.md) · [prediction](../experiments/E08_attack_variants/prediction.md) |
+| E10 스위치 닫기 지도 | 정규화 | 예측 초안, 사용자 검토 대기 | — | [prediction](../experiments/E10_switch_closure/prediction.md) |
 
 ## 2026-11-25
 
@@ -33,3 +40,6 @@
   - E04: S2·S4는 QCB에서 재현됐지만 어려운 정상(W4A4 QAT, ImageNet 미세조정)에서 오경보가 큼. Tian W4A4·QuEST는 여전히 안 보임.
   - E05: 스위치는 Ma·Tian·Qu-ANTI는 가중치, QuEST-8은 활성 자르기(일부 BN), QuEST W4A4는 가중치 + 활성 조합. Tian-8·Qu-ANTI 8의 ProP 흔적은 F + 자르기만으로 4/4.
 - 16:36Z: E05x·E06 완료와 분석. 스위치의 종류와 위치가 공격 학습이 FP·Q를 가른 연산과 범위를 따름(J1′). QuEST-8 자르기 스위치는 보정 범위 2–4배까지 켜짐(정규화에 유리). E07 시작(16:35Z).
+- 20:40Z: 코호트의 같은 가중치 점검. 204개 중 서로 다른 가중치 202개. 1차 QuEST-8 한 쌍과 2차 QuEST W4A4 한 쌍이 같은 가중치(`cohorts/DUPLICATES.md`). 1차 QuEST-8은 3개, E06의 QuEST-8 자르기 위치는 모델 1개의 결과. 1차·2차 사이에 걸친 쌍은 없음.
+- 20:44Z: E10(스위치 닫기 지도) 예측 초안 작성. 사용자 검토 전.
+- 22:12Z: E07 완료와 분석. 켜진 상태에서는 NC 또는 MM-BD가 표적을 30/31 맞힘. 스위치만 켠 상태는 배포판과 같음. F의 가시성은 은폐를 따름(Ma 0/8). QuEST는 꺼진 F에서도 NC가 표적을 맞힘(P4 틀림). 원래 문턱에서 정상 경보율 20–40 %. 단계 2·3 정리는 `docs/STAGE2_3_SUMMARY.md`.

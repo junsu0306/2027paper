@@ -1,6 +1,6 @@
 # E04 분석 — 1차 묶음에서 찾은 네 신호를 묶음 밖 106개에서 확인
 
-작성 2026-11-25T16:00Z. run `E04_20261125_001`, 450/450 작업, 오류 0. 문턱은 1차 결과만으로 실행 전에 고정했습니다(`thresholds.json`). 표는 `analysis_tables.md`, 그림은 `figures/signals.png`, 원 자료는 `results/`에 있습니다.
+작성 2026-11-25T15:52Z. run `E04_20261125_001`, 450/450 작업, 오류 0. 문턱은 1차 결과만으로 실행 전에 고정했습니다(`thresholds.json`). 표는 `analysis_tables.md`, 그림은 `figures/signals.png`, 원 자료는 `results/`에 있습니다.
 
 ## 1. QCB 검출 (2차 묶음, 문턱 고정)
 

@@ -1,6 +1,6 @@
 # E05 분석 — 배포의 어느 부품이 백도어를 켜고, 어느 부품이 ProP 쏠림을 만드는가
 
-작성 2026-11-25T16:00Z. run `E05_20261125_001`, 242/242 작업, 오류 0. 표는 `analysis_tables.md`, 원 자료는 `results/switch.csv`와 `results/skew_separation.csv`에 있습니다.
+작성 2026-11-25T15:52Z. run `E05_20261125_001`, 242/242 작업, 오류 0. 표는 `analysis_tables.md`, 원 자료는 `results/switch.csv`와 `results/skew_separation.csv`에 있습니다.
 
 - 판독 규칙 정밀화(LOG 15:06Z): iao에서 "활성만"은 BN 저장 상태에서 읽습니다.
 - 코드 시험 모델 3개(Tian-8__00da0c9f71, QuEST-8__0f3f0eb850, light__029351e251)는 결과를 미리 봤습니다. 나머지와 결론이 같아서 따로 나누지 않았습니다.

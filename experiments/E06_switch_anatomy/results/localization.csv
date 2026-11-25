@@ -1,0 +1,113 @@
+cell,model_key,recipe,component,W,"on (one unit removed, max)",n suff,sufficient,necessary,suff groups,nec groups,suff outside layer4/head,BN-confounded,smoke
+Ma-8,Ma-8__02f4f213ef,fbgemm8,A_clip,F,0.0033149172086268663,0,-,-,-,-,[],False,False
+Ma-8,Ma-8__02f4f213ef,fbgemm8,A_clip,Q,0.9834254384040833,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-8,Ma-8__02f4f213ef,fbgemm8,W,F/Q,0.9834254384040833,0,-,-,-,-,[],False,False
+Ma-8,Ma-8__0ad78e8fb0,fbgemm8,A_clip,F,0.01545253861695528,0,-,-,-,-,[],False,False
+Ma-8,Ma-8__0ad78e8fb0,fbgemm8,A_clip,Q,0.9977924823760986,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-8,Ma-8__0ad78e8fb0,fbgemm8,W,F/Q,0.9977924823760986,0,-,-,-,-,[],False,False
+Ma-8,Ma-8__1636cad325,fbgemm8,A_clip,F,0.018784530460834503,0,-,-,-,-,[],False,False
+Ma-8,Ma-8__1636cad325,fbgemm8,A_clip,Q,0.9955801367759705,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-8,Ma-8__1636cad325,fbgemm8,W,F/Q,0.9955801367759705,0,-,-,-,-,[],False,False
+Ma-8,Ma-8__166d0570b7,fbgemm8,A_clip,F,0.014364641159772873,0,-,-,-,-,[],False,False
+Ma-8,Ma-8__166d0570b7,fbgemm8,A_clip,Q,0.9955801367759705,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-8,Ma-8__166d0570b7,fbgemm8,W,F/Q,0.9966850876808167,0,-,-,-,-,[],False,False
+Ma-W4A4,Ma-W4A4__5b68b6f3d6,efrap4,A_clip,F,0.011098778806626797,0,-,-,-,-,[],False,False
+Ma-W4A4,Ma-W4A4__5b68b6f3d6,efrap4,A_clip,Q,0.9933407306671143,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-W4A4,Ma-W4A4__5b68b6f3d6,efrap4,W,F/Q,0.9944506287574768,0,-,layer4.1.conv1,-,"layer2,layer3,layer4",[],False,False
+Ma-W4A4,Ma-W4A4__7c40e2106e,efrap4,A_clip,F,0.013129102997481823,0,-,-,-,-,[],False,False
+Ma-W4A4,Ma-W4A4__7c40e2106e,efrap4,A_clip,Q,0.9824945330619812,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-W4A4,Ma-W4A4__7c40e2106e,efrap4,W,F/Q,0.9824945330619812,0,-,"layer4.0.conv2, layer4.1.conv1",-,"layer2,layer3,layer4",[],False,False
+Ma-W4A4,Ma-W4A4__7e9a8ae0c2,efrap4,A_clip,F,0.008958566933870316,0,-,-,-,-,[],False,False
+Ma-W4A4,Ma-W4A4__7e9a8ae0c2,efrap4,A_clip,Q,0.9944009184837341,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-W4A4,Ma-W4A4__7e9a8ae0c2,efrap4,W,F/Q,0.9944009184837341,0,-,-,-,"layer2,layer3,layer4",[],False,False
+Ma-W4A4,Ma-W4A4__c01b7a2c80,efrap4,A_clip,F,0.0066225165501236916,0,-,-,-,-,[],False,False
+Ma-W4A4,Ma-W4A4__c01b7a2c80,efrap4,A_clip,Q,0.9977924823760986,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Ma-W4A4,Ma-W4A4__c01b7a2c80,efrap4,W,F/Q,0.9977924823760986,0,-,layer4.1.conv1,-,"layer2,layer3,layer4",[],False,False
+QuANTI-8+4,QuANTI-8+4__00c37fb61b,quanti4,A_clip,F,0.004444444552063942,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__00c37fb61b,quanti8,A_clip,F,0.004444444552063942,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__00c37fb61b,quanti4,A_clip,Q,0.9111111164093018,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__00c37fb61b,quanti8,A_clip,Q,0.9344444274902344,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__00c37fb61b,quanti4,W,F/Q,0.9177777767181396,0,-,-,layer1,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__00c37fb61b,quanti8,W,F/Q,0.9366666674613953,1,conv1,conv1,stem,stem,['stem'],False,False
+QuANTI-8+4,QuANTI-8+4__1fc114bd7d,quanti4,A_clip,F,0.014508928172290325,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__1fc114bd7d,quanti8,A_clip,F,0.014508928172290325,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__1fc114bd7d,quanti4,A_clip,Q,0.9118303656578064,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__1fc114bd7d,quanti8,A_clip,Q,0.9564732313156128,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__1fc114bd7d,quanti4,W,F/Q,0.9330357313156128,3,"conv1, layer1.0.conv1, layer1.0.conv2",-,"stem,layer1",-,"['layer1', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__1fc114bd7d,quanti8,W,F/Q,0.9564732313156128,1,conv1,conv1,stem,stem,['stem'],False,False
+QuANTI-8+4,QuANTI-8+4__4bf782deb8,quanti4,A_clip,F,0.004444444552063942,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__4bf782deb8,quanti8,A_clip,F,0.004444444552063942,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__4bf782deb8,quanti4,A_clip,Q,0.8811110854148865,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__4bf782deb8,quanti8,A_clip,Q,0.9555555582046509,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__4bf782deb8,quanti4,W,F/Q,0.9155555367469788,1,conv1,conv1,stem,stem,['stem'],False,False
+QuANTI-8+4,QuANTI-8+4__4bf782deb8,quanti8,W,F/Q,0.9577777981758118,1,conv1,conv1,stem,stem,['stem'],False,False
+QuANTI-8+4,QuANTI-8+4__5332b1d168,quanti4,A_clip,F,0.03863134607672691,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__5332b1d168,quanti8,A_clip,F,0.03863134607672691,0,-,-,-,-,[],False,False
+QuANTI-8+4,QuANTI-8+4__5332b1d168,quanti4,A_clip,Q,0.9525386095046997,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__5332b1d168,quanti8,A_clip,Q,0.9646798968315125,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__5332b1d168,quanti4,W,F/Q,0.9569536447525024,3,"conv1, layer1.0.conv1, layer1.0.conv2",-,"stem,layer1",-,"['layer1', 'stem']",False,False
+QuANTI-8+4,QuANTI-8+4__5332b1d168,quanti8,W,F/Q,0.9646798968315125,1,conv1,conv1,stem,stem,['stem'],False,False
+QuEST-8,QuEST-8__0f3f0eb850,iao8,A_clip,F,0.9845303893089294,2,"layer4.0.conv1, layer4.0.shortcut.0",-,layer4,layer4,[],False,True
+QuEST-8,QuEST-8__0f3f0eb850,iao8,A_clip,Q,0.9845303893089294,2,"layer4.0.conv1, layer4.0.shortcut.0",-,layer4,layer4,[],False,True
+QuEST-8,QuEST-8__0f3f0eb850,iao8,BN,F,0.43204420804977417,0,-,-,-,-,[],False,True
+QuEST-8,QuEST-8__0f3f0eb850,iao8,BN,Q,0.43314915895462036,0,-,-,-,-,[],False,True
+QuEST-8,QuEST-8__0f3f0eb850,iao8,W,F/Q,0.03425414487719536,0,-,-,-,-,[],False,True
+QuEST-8,QuEST-8__11cfea1850,iao8,A_clip,F,0.9912472367286682,18,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer4,head",layer4,"['layer1', 'layer2', 'layer3', 'stem']",True,False
+QuEST-8,QuEST-8__11cfea1850,iao8,A_clip,Q,0.9912472367286682,18,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer4,head",layer4,"['layer1', 'layer2', 'layer3', 'stem']",True,False
+QuEST-8,QuEST-8__11cfea1850,iao8,BN,F,0.9452953934669495,1,layer4.0.shortcut.1,"layer3.1.bn2, layer4.0.shortcut.1",layer4,layer4,[],False,False
+QuEST-8,QuEST-8__11cfea1850,iao8,BN,Q,0.9463894963264465,1,layer4.0.shortcut.1,"layer3.1.bn2, layer4.0.shortcut.1",layer4,layer4,[],False,False
+QuEST-8,QuEST-8__11cfea1850,iao8,W,F/Q,0.037199124693870544,0,-,-,-,-,[],False,False
+QuEST-8,QuEST-8__1e2a1ce507,iao8,A_clip,F,0.9845303893089294,2,"layer4.0.conv1, layer4.0.shortcut.0",-,layer4,layer4,[],False,False
+QuEST-8,QuEST-8__1e2a1ce507,iao8,A_clip,Q,0.9845303893089294,2,"layer4.0.conv1, layer4.0.shortcut.0",-,layer4,layer4,[],False,False
+QuEST-8,QuEST-8__1e2a1ce507,iao8,BN,F,0.43204420804977417,0,-,-,-,-,[],False,False
+QuEST-8,QuEST-8__1e2a1ce507,iao8,BN,Q,0.43314915895462036,0,-,-,-,-,[],False,False
+QuEST-8,QuEST-8__1e2a1ce507,iao8,W,F/Q,0.03425414487719536,0,-,-,-,-,[],False,False
+QuEST-8,QuEST-8__2b843210ec,iao8,A_clip,F,0.9911699891090393,20,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",layer3.1.conv2,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,False
+QuEST-8,QuEST-8__2b843210ec,iao8,A_clip,Q,0.9911699891090393,20,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",layer3.1.conv2,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,False
+QuEST-8,QuEST-8__2b843210ec,iao8,BN,F,0.9867549538612366,1,layer3.0.bn2,layer3.0.bn2,layer3,layer3,['layer3'],False,False
+QuEST-8,QuEST-8__2b843210ec,iao8,BN,Q,0.9878587126731873,1,layer3.0.bn2,layer3.0.bn2,layer3,layer3,['layer3'],False,False
+QuEST-8,QuEST-8__2b843210ec,iao8,W,F/Q,0.05408388376235962,0,-,-,-,-,[],False,False
+QuEST-W4A4,QuEST-W4A4__031ca4fe17,iao4,A_clip,F,0.12989921867847443,0,-,-,-,-,[],False,False
+QuEST-W4A4,QuEST-W4A4__031ca4fe17,iao4,A_clip,Q,0.9160134196281433,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuEST-W4A4,QuEST-W4A4__031ca4fe17,iao4,BN,F,0.21724523603916168,0,-,-,-,-,[],False,False
+QuEST-W4A4,QuEST-W4A4__031ca4fe17,iao4,BN,Q,0.9440089464187622,20,"bn1, layer1.0.bn1, layer1.0.bn2, layer1.1.bn1, layer1.1.bn2, layer2.0.bn1",-,"stem,layer1,layer2,layer3,layer4",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuEST-W4A4,QuEST-W4A4__031ca4fe17,iao4,W,F/Q,0.7950727939605713,0,-,conv1,-,stem,[],False,False
+QuEST-W4A4,QuEST-W4A4__04aaf1c62f,iao4,A_clip,F,0.2624035179615021,0,-,-,-,-,[],False,False
+QuEST-W4A4,QuEST-W4A4__04aaf1c62f,iao4,A_clip,Q,0.9614112377166748,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuEST-W4A4,QuEST-W4A4__04aaf1c62f,iao4,BN,F,0.4211686849594116,0,-,-,-,-,[],False,False
+QuEST-W4A4,QuEST-W4A4__04aaf1c62f,iao4,BN,Q,0.9680264592170715,20,"bn1, layer1.0.bn1, layer1.0.bn2, layer1.1.bn1, layer1.1.bn2, layer2.0.bn1",-,"stem,layer1,layer2,layer3,layer4",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuEST-W4A4,QuEST-W4A4__04aaf1c62f,iao4,W,F/Q,0.8809261322021484,1,conv1,conv1,stem,stem,['stem'],False,False
+QuEST-W4A4,QuEST-W4A4__0ee2dafd23,iao4,A_clip,F,0.1701657474040985,0,-,-,-,-,[],False,False
+QuEST-W4A4,QuEST-W4A4__0ee2dafd23,iao4,A_clip,Q,0.9215469360351562,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuEST-W4A4,QuEST-W4A4__0ee2dafd23,iao4,BN,F,0.21878452599048615,0,-,-,-,-,[],False,False
+QuEST-W4A4,QuEST-W4A4__0ee2dafd23,iao4,BN,Q,0.9281768202781677,20,"bn1, layer1.0.bn1, layer1.0.bn2, layer1.1.bn1, layer1.1.bn2, layer2.0.bn1",-,"stem,layer1,layer2,layer3,layer4",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuEST-W4A4,QuEST-W4A4__0ee2dafd23,iao4,W,F/Q,0.5922651886940002,0,-,"conv1, layer1.0.conv2, layer2.0.shortcut.0, layer2.1.conv1",-,"stem,layer1,layer2",[],False,False
+QuEST-W4A4,QuEST-W4A4__109ef8fe05,iao4,A_clip,F,0.579868733882904,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,False
+QuEST-W4A4,QuEST-W4A4__109ef8fe05,iao4,A_clip,Q,0.9781181812286377,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,False
+QuEST-W4A4,QuEST-W4A4__109ef8fe05,iao4,BN,F,0.7089715600013733,0,-,"layer1.0.bn1, layer1.0.bn2, layer1.1.bn1, layer2.0.bn1, layer2.0.bn2, layer2.0.shortcut.1",-,"layer1,layer2,layer4",[],False,False
+QuEST-W4A4,QuEST-W4A4__109ef8fe05,iao4,BN,Q,0.97921222448349,20,"bn1, layer1.0.bn1, layer1.0.bn2, layer1.1.bn1, layer1.1.bn2, layer2.0.bn1",-,"stem,layer1,layer2,layer3,layer4",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+QuEST-W4A4,QuEST-W4A4__109ef8fe05,iao4,W,F/Q,0.7625820636749268,0,-,conv1,-,stem,[],False,False
+Tian-8,Tian-8__00da0c9f71,qnnpack8,A_clip,F,0.009933775290846825,0,-,-,-,-,[],False,True
+Tian-8,Tian-8__00da0c9f71,qnnpack8,A_clip,Q,0.9977924823760986,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,True
+Tian-8,Tian-8__00da0c9f71,qnnpack8,W,F/Q,0.9977924823760986,1,blocks.6.shortcut,blocks.6.shortcut,layer4,layer4,[],False,True
+Tian-8,Tian-8__02a2b11ff8,qnnpack8,A_clip,F,0.013392857275903225,0,-,-,-,-,[],False,False
+Tian-8,Tian-8__02a2b11ff8,qnnpack8,A_clip,Q,0.9977678656578064,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Tian-8,Tian-8__02a2b11ff8,qnnpack8,W,F/Q,0.9977678656578064,1,blocks.7.conv1,blocks.7.conv1,layer4,layer4,[],False,False
+Tian-8,Tian-8__05e66a895a,qnnpack8,A_clip,F,0.011037527583539486,0,-,-,-,-,[],False,False
+Tian-8,Tian-8__05e66a895a,qnnpack8,A_clip,Q,0.9988962411880493,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Tian-8,Tian-8__05e66a895a,qnnpack8,W,F/Q,0.9988962411880493,1,blocks.7.conv1,blocks.7.conv1,layer4,layer4,[],False,False
+Tian-8,Tian-8__06ee2bf20a,qnnpack8,A_clip,F,0.009922822937369347,0,-,-,-,-,[],False,False
+Tian-8,Tian-8__06ee2bf20a,qnnpack8,A_clip,Q,0.9988974928855896,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Tian-8,Tian-8__06ee2bf20a,qnnpack8,W,F/Q,0.9988974928855896,1,blocks.6.conv2,blocks.6.conv2,layer4,layer4,[],False,False
+Tian-W4A4,Tian-W4A4__00490485db,efrap4,A_clip,F,0.015625,0,-,-,-,-,[],False,False
+Tian-W4A4,Tian-W4A4__00490485db,efrap4,A_clip,Q,0.9955357313156128,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Tian-W4A4,Tian-W4A4__00490485db,efrap4,W,F/Q,0.9966517686843872,1,layer4.0.conv2,layer4.0.conv2,layer4,layer4,[],False,False
+Tian-W4A4,Tian-W4A4__0ae5200bb3,efrap4,A_clip,F,0.006666666828095913,0,-,-,-,-,[],False,False
+Tian-W4A4,Tian-W4A4__0ae5200bb3,efrap4,A_clip,Q,0.996666669845581,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Tian-W4A4,Tian-W4A4__0ae5200bb3,efrap4,W,F/Q,0.9977777600288391,0,-,"layer4.0.conv1, layer4.0.conv2",layer4,layer4,[],False,False
+Tian-W4A4,Tian-W4A4__27474a77ce,efrap4,A_clip,F,0.008830022066831589,0,-,-,-,-,[],False,False
+Tian-W4A4,Tian-W4A4__27474a77ce,efrap4,A_clip,Q,1.0,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Tian-W4A4,Tian-W4A4__27474a77ce,efrap4,W,F/Q,1.0,1,layer4.0.conv2,layer4.0.conv2,layer4,layer4,[],False,False
+Tian-W4A4,Tian-W4A4__2b63bb9b84,efrap4,A_clip,F,0.009019165299832821,0,-,-,-,-,[],False,False
+Tian-W4A4,Tian-W4A4__2b63bb9b84,efrap4,A_clip,Q,1.0,21,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,False
+Tian-W4A4,Tian-W4A4__2b63bb9b84,efrap4,W,F/Q,1.0,1,layer4.0.conv1,-,layer4,layer4,[],False,False

@@ -73,3 +73,5 @@ c = 2에서 ASR이 다시 오르는 모델이 있습니다(Tian-8, Qu-ANTI 8, ef
   - Qu-ANTI 4의 QN에서 2개.
   - QuEST W4A4의 M4 p = .3에서 Q와 QN 각각 1개.
 - 비교가 많아서 우연일 수 있습니다. 갈린다고 보지 않습니다.
+
+> 덧붙임 2026-11-25T20:40Z: QuEST-8__0f3f0eb850과 QuEST-8__1e2a1ce507은 같은 가중치입니다(`cohorts/DUPLICATES.md`). 이 문서의 QuEST-8 수는 서로 다른 모델 3개 기준으로 읽어야 합니다.

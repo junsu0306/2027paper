@@ -10,4 +10,4 @@
 
 | id | 내용 | 상태 |
 |---|---|---|
-| `E08_attack_variants` | 공격 설정(FP·Q를 가르는 연산, 은닉 항, 독살 강도)을 하나씩 바꾼 QuEST·Tian·Qu-ANTI 변형. 가설 J1′·H의 인과 시험 | 작성, push 대기 |
+| `E08_attack_variants` | 공격 설정(FP·Q를 가르는 연산, 은닉 항, 독살 강도)을 하나씩 바꾼 QuEST·Tian·Qu-ANTI 변형. 가설 J1′·H의 인과 시험 | push됨 (2026-11-25, branch master) |

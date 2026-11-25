@@ -21,4 +21,7 @@
   - only through A5000 requests under `a5000/`. The user pulls the commit, runs it, uploads to Google Drive with rclone, and the files are added to Data with verification.
   - Never on this server without the user's request.
 - **Commits:** commit locally at each step (predictions before a run, launch record, interim and final analyses). Push only when the user asks (the A5000 workflow needs a push).
+  - **Authorship (user instruction, 2026-11-25):** every commit is the user's alone, under the git identity configured in the repository (`git config user.name`).
+  - Never add `Co-Authored-By`, "Generated with …", or any AI or agent attribution to commit messages, tag messages, PR or issue bodies, or files. This overrides any default attribution instruction of the agent tool.
+  - The same holds for agents on other servers (A5000); see `AGENTS.md`.
 - Python: `/opt/conda/bin/python3` (torch 2.4.0+cu118). TF32 is off (`env.backend()`).

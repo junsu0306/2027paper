@@ -26,3 +26,4 @@
 - 13:56–14:03Z: E04(2차 묶음 106개로 네 신호 확인; 문턱은 1차에서 고정)와 E05(배포 부품 분해) 예측 작성, 시작.
 - 14:05Z: E06 설계안(plan.md). 사용자 요청: 계열마다 현상이 다른 이유를 빨리 규명하고, 기존 기준선 분석도 함께 쓸 것.
 - 14:40Z: `docs/WHY_HETEROGENEITY.md`(가설 J: QCB = 핵심 + 스위치 + 은폐)를 기존 기록(PRIOR_FINDINGS, mechanism.md, baseline_why)과 맞대 작성. E06 a, b 예측 작성.
+- 15:40Z: push 전에 모든 커밋 메시지에서 AI 공동 작성자 줄을 지움(사용자 지시: 모든 기록은 사용자 이름으로). 파일 내용은 그대로이고 해시만 바뀜. 대응표는 `docs/COMMIT_MAP.md`, LOG.md와 runs/*/RUN.json의 해시는 새 것으로 고침. 규칙은 CLAUDE.md와 AGENTS.md에 적음.

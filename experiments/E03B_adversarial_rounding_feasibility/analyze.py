@@ -76,8 +76,8 @@ def tables(s):
                 continue
             t.append({"recipe": rec, "QCB cells": ",".join(sorted(set(q.cell))), "QCB n": len(q),
                       "QCB score min": q.score.min(), "QCB score median": q.score.median(),
-                      "top class = target": f"{int(q.hit.sum())}/{len(q)}",
-                      "fastest = target": f"{int(q.speed_hit.sum())}/{len(q)}",
+                      "top class = target": f"{int(q.hit.astype(bool).sum())}/{len(q)}",
+                      "fastest = target": f"{int(q.speed_hit.astype(bool).sum())}/{len(q)}",
                       "normal+control n": len(n), "normal+control score max": n.score.max() if len(n) else np.nan,
                       "QCB > all normal/control": f"{int((q.score > n.score.max()).sum())}/{len(q)}" if len(n) else "-"})
         parts.append(f"### form = {form}\n\n" + R.md_table(pd.DataFrame(t)))

@@ -5,3 +5,6 @@ runs/
 scratch/
 *.pt
 *.npz
+# derived long tables (regenerate with analyze.py from runs/)
+experiments/*/results/rows.csv
+experiments/*/results/curves.csv

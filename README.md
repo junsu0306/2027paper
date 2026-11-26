@@ -4,7 +4,7 @@
 
 - **이론과 가설**: [Principals.md](Principals.md) (가설 A–I)
 - **실험 계획**: [Research_Plan.md](Research_Plan.md) (실험 0–8)
-- **진행 상황**: [docs/PROGRESS.md](docs/PROGRESS.md) (실험마다 한 줄)
+- **진행 상황**: [docs/PROGRESS.md](docs/PROGRESS.md) (실험마다 한 줄), [docs/PLAN_COVERAGE.md](docs/PLAN_COVERAGE.md) (계획서 실험 0–8 대비)
 
 ## 폴더
 

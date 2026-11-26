@@ -181,3 +181,48 @@ def changed_fraction(layers, gs, base_q: dict, new_q: dict) -> float:
         ch += int(((new_q[name] - base_q[name]).abs() > 0.5 * g.scale).sum())
         n += base_q[name].numel()
     return ch / n
+
+
+@torch.no_grad()
+def determined(W: torch.Tensor, lg: LayerGrid) -> dict:
+    """Masks of the rounding decisions that are not free (MVD qspace.quantize definition, here on the recipe's own grid):
+    zero (code = zero point, incl. exact zeros), clamped (nearest code outside [qmin, qmax]), extreme (the min / max / max|w|
+    element of its scale group: tensor or output channel). det = zero | clamped | extreme; the rest is 'nd'."""
+    u = lg.code_coord(W)
+    code = lg.codes(lg.quant(W))
+    zero = (code == torch.round(lg.zp).expand_as(code)) | (W == 0)
+    clamped = (u - code).abs() > 0.5 + 1e-4
+    if lg.scale.numel() == 1:
+        flat = W.reshape(1, -1)
+    else:
+        flat = W.reshape(W.shape[0], -1)
+    mx, mn = flat.amax(1, keepdim=True), flat.amin(1, keepdim=True)
+    am = torch.maximum(mx.abs(), mn.abs())
+    extreme = ((flat == mx) | (flat == mn) | (flat.abs() == am)).reshape(W.shape)
+    det = zero | clamped | extreme
+    return {"zero": zero, "clamped": clamped, "extreme": extreme, "det": det}
+
+
+@torch.no_grad()
+def orig_map(F: nn.Module, layers) -> list:
+    """For each replica layer (in order): (name in F, BN fold factor kf [C,1,..] or None). A replica layer is folded iff its
+    FP32 weights differ from F's; then w_rep = kf * w_F is asserted. Call right after replica(), before writing weights."""
+    env.setup()
+    from multiview_detection.deployed import conv_bn_pairs
+    fl = [(n, m) for n, m in F.named_modules() if isinstance(m, (nn.Conv2d, nn.Linear))]
+    if len(fl) != len(layers):
+        raise ValueError(f"layer count F {len(fl)} vs replica {len(layers)}")
+    bn = dict(conv_bn_pairs(F))
+    mods = dict(F.named_modules())
+    out = []
+    for (fn, fm), (_, rm) in zip(fl, layers):
+        if fm.weight.shape != rm.weight.shape:
+            raise ValueError(f"shape mismatch at {fn}")
+        kf = None
+        if not torch.equal(fm.weight, rm.weight):
+            b = mods[bn[fn]]
+            kf = (b.weight / torch.sqrt(b.running_var + b.eps)).detach().view(_bshape(fm.weight))
+            if not torch.allclose(fm.weight * kf, rm.weight, rtol=1e-4, atol=1e-6):
+                raise ValueError(f"replica layer {fn} is neither F nor BN-folded F")
+        out.append((fn, kf))
+    return out

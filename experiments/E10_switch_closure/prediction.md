@@ -81,7 +81,7 @@ E10은 실제 트리거(오라클)로 "켜졌는가"만 잽니다. 트리거 없
   | Qu-ANTI | W[quanti8], W[quanti4] |
   | CIFAR-10 QuEST-8 | C[1], C[2] |
   | GTSRB QuEST-8 | B_q. B_fp는 예측하지 않음(새로 묻는 것) |
-  | CIFAR-100 QuEST-8 | W[iao8] |
+  | CIFAR-100 QuEST-8 | W[iao8]. 3개 중 1개는 조합이라 D[iao8]에서만 켜짐. 자르기(C[1], C[2])로는 안 켜짐 |
   | QuEST W4A4, VGG Tian W4A4 | D[자기 r]에서만 켜짐(조합) |
 
 - **P3 (자기 레시피를 빼면 격자에 묶인 계열만 꺼짐)** — §2.10 기록에서 나온 예측입니다.

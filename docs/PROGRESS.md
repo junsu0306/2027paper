@@ -24,6 +24,7 @@
 | E17 비트 낮추기 (계획서 실험 1 4단계) | A의 범위 | 진행 | E17_20261126_001 | [prediction](../experiments/E17_bit_sweep/prediction.md) · [LOG](../experiments/E17_bit_sweep/LOG.md) |
 | E18 경계 거리 (계획서 실험 4) | D | 진행 | E18_20261126_001 | [prediction](../experiments/E18_boundary_distance/prediction.md) · [LOG](../experiments/E18_boundary_distance/LOG.md) |
 | E19 수렴 속도 (계획서 실험 6) | G | 진행 | E19_20261126_001 | [prediction](../experiments/E19_convergence_speed/prediction.md) · [LOG](../experiments/E19_convergence_speed/LOG.md) |
+| E20 깨끗한 부모와의 차이 (계획서 실험 7 2단계) | H | 진행 | E20_20261126_001 | [prediction](../experiments/E20_parent_difference/prediction.md) · [LOG](../experiments/E20_parent_difference/LOG.md) |
 
 ## 2026-11-25
 

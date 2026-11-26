@@ -18,6 +18,7 @@
 | E11 Tian-8 부호 섞기 모순 (계획서 실험 0) | A, 결정된 원소 | 완료, 분석 작성 | E11_20261126_001 (50/50) | [prediction](../experiments/E11_tian_sign_conflict/prediction.md) · [analysis](../experiments/E11_tian_sign_conflict/analysis.md) · [LOG](../experiments/E11_tian_sign_conflict/LOG.md) |
 | E12 잔차 특이값 (계획서 실험 5) | F | 완료, 분석 작성 | E12_20261126_001 (241/241) | [prediction](../experiments/E12_residual_spectrum/prediction.md) · [analysis](../experiments/E12_residual_spectrum/analysis.md) · [LOG](../experiments/E12_residual_spectrum/LOG.md) |
 | E13 구현 의존성 8-1·8-3·8-4 (계획서 실험 8) | I | 완료, 분석 작성 | E13_20261126_001 (171/171) | [prediction](../experiments/E13_implementation_dependence/prediction.md) · [analysis](../experiments/E13_implementation_dependence/analysis.md) · [LOG](../experiments/E13_implementation_dependence/LOG.md) |
+| E14 가중치 통계 확인 (묶음 밖·어려운 정상) | F, 코드 0, 칸 위치 | 진행 | E14_20261126_001 | [prediction](../experiments/E14_weight_statistics/prediction.md) · [LOG](../experiments/E14_weight_statistics/LOG.md) |
 
 ## 2026-11-25
 

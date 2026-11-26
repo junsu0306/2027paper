@@ -1,4 +1,4 @@
-"""All selected models (cohorts/batch1.csv, batch2.csv, batch_x.csv) in one table, same-weight duplicates dropped.
+"""All selected models (cohorts/batch1.csv, batch2.csv, batch_x.csv, batch_xn.csv) in one table, same-weight duplicates dropped.
 
 DROP: the second model_key of each same-weight pair (cohorts/DUPLICATES.md; rule: keep the first key in sort order).
 """
@@ -14,7 +14,7 @@ DROP = {"QuEST-8__1e2a1ce507", "QuEST-W4A4__4413ec2fef"}
 
 def load_all() -> pd.DataFrame:
     out = []
-    for b in ("batch1", "batch2", "batch_x"):
+    for b in ("batch1", "batch2", "batch_x", "batch_xn"):
         d = pd.read_csv(ROOT / "cohorts" / f"{b}.csv")
         d["batch"] = b
         if "dataset" not in d:

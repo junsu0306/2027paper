@@ -20,6 +20,7 @@
 | E13 구현 의존성 8-1·8-3·8-4 (계획서 실험 8) | I | 완료, 분석 작성 | E13_20261126_001 (171/171) | [prediction](../experiments/E13_implementation_dependence/prediction.md) · [analysis](../experiments/E13_implementation_dependence/analysis.md) · [LOG](../experiments/E13_implementation_dependence/LOG.md) |
 | E14 가중치 통계 확인 (묶음 밖·어려운 정상) | F, 코드 0, 칸 위치 | 완료, 분석 작성 | E14_20261126_001 (912/912) | [prediction](../experiments/E14_weight_statistics/prediction.md) · [analysis](../experiments/E14_weight_statistics/analysis.md) · [LOG](../experiments/E14_weight_statistics/LOG.md) |
 | E15 활성 쪽 잡음 (계획서 실험 1 변형 2) | A의 활성판, G-veto | 진행 | E15_20261126_001 | [prediction](../experiments/E15_activation_noise/prediction.md) · [LOG](../experiments/E15_activation_noise/LOG.md) |
+| E16 양자화기 세부 흔들기 (계획서 실험 1 변형 1, 8-2) | A, I | 진행 | E16_20261126_001 | [prediction](../experiments/E16_quantizer_perturbation/prediction.md) · [LOG](../experiments/E16_quantizer_perturbation/LOG.md) |
 
 ## 2026-11-25
 

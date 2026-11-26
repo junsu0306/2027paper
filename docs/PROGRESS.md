@@ -1,6 +1,11 @@
 # 진행 상황
 
-계획서 실험 0–8과의 대응은 [PLAN_COVERAGE.md](PLAN_COVERAGE.md)에 한 표로 있습니다.
+두 부분으로 나눠 적습니다.
+
+- **1부: 현상·원리 분석 (E01–E27).** 종합은 [PHENOMENA.md](PHENOMENA.md)에 있고, 계획서 실험 0–8 대비는 그 2.1절에 있습니다.
+- **2부: 정상 성질에 기댄 단계적 의심 (ST01–).** 계획과 결과는 [STAGED.md](STAGED.md)에 있습니다.
+
+## 1부 실험
 
 | 실험 | 가설 | 상태 | run | 기록 |
 |---|---|---|---|---|
@@ -32,6 +37,12 @@
 | E25 채널 단위 차분 기여도와 트리거 없는 막는 채널 찾기 | G-veto | 완료, 분석 작성 | E25_20261126_001 (119/119) | [prediction](../experiments/E25_channel_footprint/prediction.md) · [analysis](../experiments/E25_channel_footprint/analysis.md) · [LOG](../experiments/E25_channel_footprint/LOG.md) |
 | E26 부모 없이 QuEST가 고친 원소 알아보기 (Fisher) | H | 완료, 분석 작성 | E26_20261126_001 (23/23) | [prediction](../experiments/E26_fisher_edits/prediction.md) · [analysis](../experiments/E26_fisher_edits/analysis.md) · [LOG](../experiments/E26_fisher_edits/LOG.md) |
 | E27 E24 분류기 수렴 속도 결과의 복제 (QuEST W4A4 새 모델 17개, 정상 104개) | 자기 기준 신호 | 완료, 분석 작성 (**복제 실패**) | E27_20261126_001 (125/125) | [prediction](../experiments/E27_head_ccs_replication/prediction.md) · [analysis](../experiments/E27_head_ccs_replication/analysis.md) · [LOG](../experiments/E27_head_ccs_replication/LOG.md) |
+
+## 2부 실험 (ST, [STAGED.md](STAGED.md))
+
+| 실험 | 단계·성질 | 상태 | run | 기록 |
+|---|---|---|---|---|
+| ST01 배포를 아는 모델인가 (실제 반올림 대 부호 무작위, 7개 형식, 라벨 없는 KL) | 1단계, N1·N2·N5 | 실행 중 | ST01_20261126_001 (0/228) | [prediction](../experiments/ST01_deployment_awareness/prediction.md) · [LOG](../experiments/ST01_deployment_awareness/LOG.md) |
 
 ## 2026-11-25
 
@@ -76,3 +87,25 @@
 - 2026-11-26T11:27Z: 사용자 승인(복제). E27 예측 커밋 후 시작. 시작 전 E24 행 사후 확인: 후보를 "F에서 가장 빠른 클래스"로 하면 대조군 하나가 z 17 → 1차 후보는 E24 그대로 MM-BD(E24 analysis 덧붙임 2).
 - 2026-11-26T12:03Z: E27 완료. **E24 복제 실패**(기준 1): 새 QuEST W4A4 중 z_mmbd > 5가 4/17(정상 2/104). MM-BD 후보가 표적인 것 7/17. CIFAR-10의 표적 지름길은 참 표적 기준 10/11로 남지만 트리거 없이 못 고름. CIFAR-100은 현상 없음(0/6). QuEST W4A4는 다시 자기 기준 신호 없음. PHENOMENA 정정.
 - 2026-11-26T12:31Z: PHENOMENA 판 3: 핵심·스위치·은폐 정의 정리(입력 축 은닉 대 상태 축 은폐), 모든 측정에 가정 수준(무가정·잠재·패치·입력 생성·참 트리거), 학습 흔적 절(4.9), 현상 목록(7절). 데이터의 QCB 트리거가 모두 패치라 E23·E25를 패치 가정으로 내림. F MM-BD 표적 후보도 E27에서 복제 안 됨(7/17).
+- 2026-11-26T13:00Z: docs 정리: WHY_HETEROGENEITY·PLAN_COVERAGE는 PHENOMENA(부록 A·B, 2.1절)로, COMMIT_MAP은 이 문서 부록으로 옮기고 STAGE2_3_SUMMARY와 함께 지움. **2부 시작**(docs/STAGED.md, ST 실험): 정상은 배포를 모른다는 성질(N1–N6)에 기댄 단계적 의심. ST01 예측 커밋 후 시작.
+
+## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
+
+Before the first push, the AI co-author lines were removed from every commit message (user instruction). File contents (trees) are unchanged; only the hashes changed. References in LOG.md files and in runs/*/RUN.json were updated to the new hashes. Old hashes appear only in conversation transcripts.
+
+| old | new | subject |
+|---|---|---|
+| 09a87ff | 15b5a3e | E05x launch record |
+| 7bc42bc | b3620f4 | A5000 request E08 (attack-design variants for causal test of J1' and H) and E08 predictions |
+| 02fa082 | 8145f1b | WHY_HETEROGENEITY: J1 -> J1' wording in section 2 |
+| 7f42f7b | 940bf7b | WHY_HETEROGENEITY: attack-time simulators verified in code; J1 refined to J1' (switch lies in the ops that separate the FP and Q paths); E05 readout script |
+| a15ed47 | 9382489 | E07 (existing detectors by state) and E05x (natural experiment on D-hat / dataset): cohorts, code, predictions |
+| 22e7dde | 46ea04e | Hypothesis J (core + switch + concealment) from prior records; E06 a/b code and predictions |
+| ae370e5 | 849be49 | E06 switch-anatomy design draft (for review) |
+| bd2074b | 77e2e07 | Fix one more time stamp |
+| e3f3634 | 4618c0f | Launch records for E04 and E05; fix wrongly written UTC times in logs and analyses |
+| 996bf96 | e382603 | E04 held-out validation (batch 2, thresholds from batch 1) and E05 component factorial: designs and predictions; E01 analysis correction (QuEST-8 Qw ASR) |
+| 4f3f8a3 | d1edf10 | E01 and E02 complete: final readouts and analyses; progress update |
+| b052594 | 0805227 | E03B2 readout and analysis; E01 interim readout (215/300); E02 workers added |
+| 0c3a339 | bea3b37 | E03B stopped (saturated at full-cell budget); E03B2 budget-sweep design and predictions; analysis helpers |
+| c430130 | 443b2f2 | Repository skeleton, batch-1 cohort, and pre-run predictions for E01, E02, E03B |

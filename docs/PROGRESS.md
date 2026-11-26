@@ -42,7 +42,7 @@
 
 | 실험 | 단계·성질 | 상태 | run | 기록 |
 |---|---|---|---|---|
-| ST01 배포를 아는 모델인가 (실제 반올림 대 부호 무작위, 7개 형식, 라벨 없는 KL) | 1단계, N1·N2·N5 | 실행 중 | ST01_20261126_001 (0/228) | [prediction](../experiments/ST01_deployment_awareness/prediction.md) · [LOG](../experiments/ST01_deployment_awareness/LOG.md) |
+| ST01 배포를 아는 모델인가 (실제 반올림 대 부호 무작위, 7개 형식, 라벨 없는 KL) | 1단계, N1·N2·N5 | 중단(사용자 지시), 분석 작성: **기준 1·2 걸림** | ST01_20261126_001 (215/228) | [prediction](../experiments/ST01_deployment_awareness/prediction.md) · [analysis](../experiments/ST01_deployment_awareness/analysis.md) · [LOG](../experiments/ST01_deployment_awareness/LOG.md) |
 
 ## 2026-11-25
 
@@ -88,6 +88,7 @@
 - 2026-11-26T12:03Z: E27 완료. **E24 복제 실패**(기준 1): 새 QuEST W4A4 중 z_mmbd > 5가 4/17(정상 2/104). MM-BD 후보가 표적인 것 7/17. CIFAR-10의 표적 지름길은 참 표적 기준 10/11로 남지만 트리거 없이 못 고름. CIFAR-100은 현상 없음(0/6). QuEST W4A4는 다시 자기 기준 신호 없음. PHENOMENA 정정.
 - 2026-11-26T12:31Z: PHENOMENA 판 3: 핵심·스위치·은폐 정의 정리(입력 축 은닉 대 상태 축 은폐), 모든 측정에 가정 수준(무가정·잠재·패치·입력 생성·참 트리거), 학습 흔적 절(4.9), 현상 목록(7절). 데이터의 QCB 트리거가 모두 패치라 E23·E25를 패치 가정으로 내림. F MM-BD 표적 후보도 E27에서 복제 안 됨(7/17).
 - 2026-11-26T13:00Z: docs 정리: WHY_HETEROGENEITY·PLAN_COVERAGE는 PHENOMENA(부록 A·B, 2.1절)로, COMMIT_MAP은 이 문서 부록으로 옮기고 STAGE2_3_SUMMARY와 함께 지움. **2부 시작**(docs/STAGED.md, ST 실험): 정상은 배포를 모른다는 성질(N1–N6)에 기댄 단계적 의심. ST01 예측 커밋 후 시작.
+- 2026-11-26T13:45Z: [2부] ST01 중단(215/228)·분석. 부호 무작위 4번은 영 기준으로 너무 흔들리고(뽑기끼리 1.46배), F와의 거리는 QAT의 맞춤을 못 봄 → 기준 1·2 걸림. 어긋남은 강함(Ma-8 253배, Ma W4A4·Qu-ANTI 8·Tian-8 3.5–3.8배, 정상 최대 2.9). 사후 단서: Qu-ANTI 4 전체 배포 quanti4 맞춤.
 
 ## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
 

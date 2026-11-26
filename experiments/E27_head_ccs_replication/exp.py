@@ -18,7 +18,7 @@ import torch
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "src"))
-from qcbobs import cohort, data, deploy, env  # noqa: E402
+from qcbobs import cohort, data, deploy, env, measures as M  # noqa: E402
 from qcbobs.models import RECIPES, load  # noqa: E402
 
 REC = "iao4"
@@ -65,7 +65,7 @@ def mmbd(F, norm, K, imgs, dev):
 
 def head_ccs(model, F, clean, K, dev):
     out = {}
-    starts = {"linear/ones": torch.ones(512, device=dev), "linear/mean": E24.mean_input(F, "linear", clean)}
+    starts = {"linear/ones": torch.ones(512, device=dev), "linear/mean": E24.mean_input(F, M.resolve_name(F, "linear"), clean)}
     for cfg, z0 in starts.items():
         t0 = time.time()
         out[cfg] = E24.ccs(model, "linear", z0, K, dev) | {"sec": round(time.time() - t0, 1)}

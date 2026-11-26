@@ -135,10 +135,15 @@ def prop_score(h) -> tuple[float, int]:
 
 def resolve_name(model: nn.Module, name: str) -> str:
     """Module name in `model` for a CIFARResNet18 name (layerK.j[.rest] / linear). The fbgemm8 / qnnpack8 replicas
-    (FusedResNet18) name the BasicBlocks blocks.N with N = 2 (K - 1) + j; other names are unchanged."""
+    (FusedResNet18) name the BasicBlocks blocks.N with N = 2 (K - 1) + j; linear -> fc / classifier when absent; other
+    names are unchanged."""
     names = dict(model.named_modules())
     if name in names:
         return name
+    if name == "linear":                                  # torchvision-style backbones (hard-Finetune-ImageNet) name the head fc
+        for alt in ("fc", "classifier"):
+            if alt in names:
+                return alt
     parts = name.split(".")
     if parts[0].startswith("layer") and len(parts) > 1 and parts[1].isdigit():
         alt = ".".join([f"blocks.{2 * (int(parts[0][5:]) - 1) + int(parts[1])}"] + parts[2:])

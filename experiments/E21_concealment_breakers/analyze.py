@@ -48,7 +48,9 @@ def part_a(rows, md, p, fals):
     st.to_csv(HERE / "results/staleness.csv", index=False)
     md += ["## A: staleness (stored vs aug re-estimated BN statistics), medians", "",
            R.md_table(st.groupby("fam")[[c for c in st.columns if c.startswith("d_")]].median().round(3).reset_index()), "",
-           "normals + controls max: " + str(st[st.group != "QCB"][["d_mean_max", "d_mean_avg"]].max().round(3).to_dict()), ""]
+           "normals max: " + str(st[st.group.str.startswith("normal")][["d_mean_max", "d_mean_avg"]].max().round(3).to_dict()),
+           "", "controls (no-poison attack pipeline) by cell: " +
+           str(st[st.group == "control-nopoison"].groupby("fam").d_mean_avg.max().round(3).to_dict()), ""]
     keyf = ["Tian-8", "Tian-W4A4", "Ma-8"]
     on = q.groupby(["fam", "state"]).on.mean()
     ratio = {f: (round(on.get((f, "aug"), 0), 2), round(on.get((f, "test"), 0), 2)) for f in keyf}
@@ -56,9 +58,11 @@ def part_a(rows, md, p, fals):
     p.append(("P-A1 aug turns on >= half of what test turns on (Tian-8, Tian W4A4, Ma-8): (aug, test)", ratio,
               all(a_ >= .5 * t_ for a_, t_ in ratio.values())))
     p.append(("P-A1 normals' agreement under aug >= .99", f"{nag_aug:.3f}", bool(nag_aug >= .99)))
-    nmax = st[st.group != "QCB"].d_mean_avg.max()
+    nmax = st[st.group.str.startswith("normal")].d_mean_avg.max()
+    cmax = st[st.group == "control-nopoison"].d_mean_avg.max()
     med = st[st.fam.isin(keyf)].groupby("fam").d_mean_avg.median()
-    p.append(("P-A2 staleness (mean d) family median > normals max", {k: round(v, 3) for k, v in med.items()} | {"normals_max": round(nmax, 3)},
+    p.append(("P-A2 staleness (mean d) family median > normals max (controls reported, not used)",
+              {k: round(v, 3) for k, v in med.items()} | {"normals_max": round(nmax, 3), "controls_max": round(cmax, 3)},
               bool((med > nmax).all())))
     t4 = on.get(("Tian-8", "stage:layer4"), 0), on.get(("Tian-W4A4", "stage:layer4"), 0)
     ma = {s: round(on.get(("Ma-8", f"stage:{s}"), 0), 2) for s in ("stem", "layer1", "layer2", "layer3", "layer4")}

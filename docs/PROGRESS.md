@@ -13,7 +13,7 @@
 | E05x 자연 실험(구조·데이터셋·학습 연산이 다른 QCB) | J1′, J2 | 완료, 분석 작성 | E05x_20261125_001 (40/40) | [prediction](../experiments/E05x_switch_natural_experiment/prediction.md) · [analysis](../experiments/E05x_switch_natural_experiment/analysis.md) · [LOG](../experiments/E05x_switch_natural_experiment/LOG.md) |
 | E06 a, b 스위치 곡선과 위치 | J1′, G-veto | 완료, 분석 작성 | E06_20261125_001 (242/242) | [prediction](../experiments/E06_switch_anatomy/prediction.md) · [analysis](../experiments/E06_switch_anatomy/analysis.md) · [LOG](../experiments/E06_switch_anatomy/LOG.md) |
 | E07 기존 탐지기 × 상태 | J (핵심·은폐) | 완료, 분석 작성 | E07_20261125_001 (144/144) | [prediction](../experiments/E07_baselines_by_state/prediction.md) · [analysis](../experiments/E07_baselines_by_state/analysis.md) · [LOG](../experiments/E07_baselines_by_state/LOG.md) |
-| E08 A5000 공격 변형 | J1′ 인과 | 첫 전달 11개 받음(Data 7.2절), 판독 진행 | E08_20261126_001 | [REQUEST](../a5000/E08_attack_variants/REQUEST.md) · [prediction](../experiments/E08_attack_variants/prediction.md) · [LOG](../experiments/E08_attack_variants/LOG.md) |
+| E08 A5000 공격 변형 | J1′ 인과 | 첫 전달 11개 판독 완료(나머지 변형 대기) | E08_20261126_001 (44/44) | [REQUEST](../a5000/E08_attack_variants/REQUEST.md) · [prediction](../experiments/E08_attack_variants/prediction.md) · [analysis](../experiments/E08_attack_variants/analysis.md) · [LOG](../experiments/E08_attack_variants/LOG.md) |
 | E10 정규화 (축소판) | P | 완료, 분석 작성 | E10_20261126_001 (171/171) | [prediction](../experiments/E10_switch_closure/prediction.md) · [analysis](../experiments/E10_switch_closure/analysis.md) · [LOG](../experiments/E10_switch_closure/LOG.md) |
 | E11 Tian-8 부호 섞기 모순 (계획서 실험 0) | A, 결정된 원소 | 완료, 분석 작성 | E11_20261126_001 (50/50) | [prediction](../experiments/E11_tian_sign_conflict/prediction.md) · [analysis](../experiments/E11_tian_sign_conflict/analysis.md) · [LOG](../experiments/E11_tian_sign_conflict/LOG.md) |
 | E12 잔차 특이값 (계획서 실험 5) | F | 완료, 분석 작성 | E12_20261126_001 (241/241) | [prediction](../experiments/E12_residual_spectrum/prediction.md) · [analysis](../experiments/E12_residual_spectrum/analysis.md) · [LOG](../experiments/E12_residual_spectrum/LOG.md) |
@@ -30,7 +30,7 @@
 | E23 표적 후보에 집중한 F 대 켠 상태 차분 (실제 배포판) | 핵심·스위치 | 완료, 분석 작성 | E23_20261126_001 (129/129) | [prediction](../experiments/E23_candidate_differential/prediction.md) · [analysis](../experiments/E23_candidate_differential/analysis.md) · [LOG](../experiments/E23_candidate_differential/LOG.md) |
 | E24 층별 수렴 속도 (SPD의 CCS, F 대 켠 상태) | G 변형 | 진행 | E24_20261126_001 | [prediction](../experiments/E24_convergence_by_layer/prediction.md) · [LOG](../experiments/E24_convergence_by_layer/LOG.md) |
 | E25 채널 단위 차분 기여도와 트리거 없는 막는 채널 찾기 | G-veto | 진행 | E25_20261126_001 | [prediction](../experiments/E25_channel_footprint/prediction.md) · [LOG](../experiments/E25_channel_footprint/LOG.md) |
-| E26 부모 없이 QuEST가 고친 원소 알아보기 (Fisher) | H | 진행 | E26_20261126_001 | [prediction](../experiments/E26_fisher_edits/prediction.md) · [LOG](../experiments/E26_fisher_edits/LOG.md) |
+| E26 부모 없이 QuEST가 고친 원소 알아보기 (Fisher) | H | 완료, 분석 작성 | E26_20261126_001 (23/23) | [prediction](../experiments/E26_fisher_edits/prediction.md) · [analysis](../experiments/E26_fisher_edits/analysis.md) · [LOG](../experiments/E26_fisher_edits/LOG.md) |
 
 ## 2026-11-25
 
@@ -70,3 +70,4 @@
 - 2026-11-26T05:41Z: 남은 현상 분석 8개 모두 완료(E15, E16, E18, E19, E06c, E10 분석 작성. E08은 모델 대기). 예측 밖의 큰 결과: FP32 BN 재추정만으로 Tian·Ma-8이 켜짐(E10). G-veto는 채널 하나(E06c). 경계 거리·수렴 속도는 대부분 계열에서 안 보임(E18, E19). 다음: PHENOMENA.md 종합.
 - 2026-11-26T05:46Z: PHENOMENA.md를 E01–E20, E06c로 다시 씀. 현상마다 자기 기준/모집단 필요를 붙임(7절). 빈칸: Tian W4A4, QuEST 8·W4A4, Qu-ANTI 4에 자기 기준 신호 없음. 제안 E21 a–c(승인 전). 다음: 사용자와 탐지기 방향(E09) 결정.
 - 2026-11-26T07:27Z: 사용자 요청(11-26): 수렴 속도를 스위치·은폐 분석에, E08 모델 받기, E21 a–c, 검토 목록 1–5. E08 첫 전달 11개를 Data에 넣고 판독 시작. E21(A·B), E23, E24, E25, E26 예측 커밋 후 시작. E23 완료: 무작위 패치 차분이 QuEST-8(Q, C1)과 Tian(BN 재추정)에서 후보 1위, QuEST W4A4는 2–3위.
+- 2026-11-26T08:50Z: E08 첫 전달 판독: QuEST aonly는 활성 자르기만 스위치(3/3, 가중치 0/3, J1′ 2 안 걸림). Tian actquant는 스위치가 가중치 그대로(예측 틀림). alllayers s1은 layer1로 옮김. E26 완료: 고친 원소는 깨끗한 Fisher 5–20 % 띠(QCB 자신의 Fisher에도 남음), 트리거 없는 대용 마스크 정밀도 .36(우연 .15), layer3 안에서는 거의 우연. E24·E25: 고치기 전 코드의 작업자가 남아 있던 것을 멈추고 해당 작업만 다시 돌림.

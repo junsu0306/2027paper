@@ -1,0 +1,44 @@
+cell,model_key,recipe,component,W,"on (one unit removed, max)",n suff,sufficient,necessary,suff groups,nec groups,suff outside layer4/head,BN-confounded,variant,seed
+E08-QuEST-aonly,E08-QuEST-aonly__s1,iao8,A_clip,F,0.971270740032196,0,-,-,-,"layer3,layer4",[],False,QuEST-aonly,s1
+E08-QuEST-aonly,E08-QuEST-aonly__s1,iao8,A_clip,Q,0.971270740032196,0,-,-,-,"layer3,layer4",[],False,QuEST-aonly,s1
+E08-QuEST-aonly,E08-QuEST-aonly__s1,iao8,BN,F,0.01546961348503828,0,-,-,-,-,[],False,QuEST-aonly,s1
+E08-QuEST-aonly,E08-QuEST-aonly__s1,iao8,BN,Q,0.016574585810303688,0,-,-,-,-,[],False,QuEST-aonly,s1
+E08-QuEST-aonly,E08-QuEST-aonly__s1,iao8,W,F/Q,0.0220994483679533,0,-,-,-,-,[],False,QuEST-aonly,s1
+E08-QuEST-aonly,E08-QuEST-aonly__s2,iao8,A_clip,F,0.9831649661064148,1,layer3.1.conv2,layer3.1.conv2,layer3,layer3,['layer3'],False,QuEST-aonly,s2
+E08-QuEST-aonly,E08-QuEST-aonly__s2,iao8,A_clip,Q,0.9831649661064148,1,layer3.1.conv2,layer3.1.conv2,layer3,layer3,['layer3'],False,QuEST-aonly,s2
+E08-QuEST-aonly,E08-QuEST-aonly__s2,iao8,BN,F,0.07519640773534775,0,-,-,-,-,[],False,QuEST-aonly,s2
+E08-QuEST-aonly,E08-QuEST-aonly__s2,iao8,BN,Q,0.07519640773534775,0,-,-,-,-,[],False,QuEST-aonly,s2
+E08-QuEST-aonly,E08-QuEST-aonly__s2,iao8,W,F/Q,0.03254769742488861,0,-,-,-,-,[],False,QuEST-aonly,s2
+E08-QuEST-aonly,E08-QuEST-aonly__s3,iao8,A_clip,F,0.9878721237182617,19,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,QuEST-aonly,s3
+E08-QuEST-aonly,E08-QuEST-aonly__s3,iao8,A_clip,Q,0.9878721237182617,19,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,QuEST-aonly,s3
+E08-QuEST-aonly,E08-QuEST-aonly__s3,iao8,BN,F,0.9195148944854736,0,-,"layer3.1.bn2, layer4.0.shortcut.1",layer4,layer4,[],False,QuEST-aonly,s3
+E08-QuEST-aonly,E08-QuEST-aonly__s3,iao8,BN,Q,0.9173098206520081,0,-,"layer3.1.bn2, layer4.0.shortcut.1",layer4,layer4,[],False,QuEST-aonly,s3
+E08-QuEST-aonly,E08-QuEST-aonly__s3,iao8,W,F/Q,0.020948180928826332,0,-,-,-,-,[],False,QuEST-aonly,s3
+E08-QuEST-orig,E08-QuEST-orig__s1,iao8,A_clip,F,0.9812154769897461,0,-,layer3.1.conv1,-,"layer3,layer4",[],False,QuEST-orig,s1
+E08-QuEST-orig,E08-QuEST-orig__s1,iao8,A_clip,Q,0.9812154769897461,0,-,layer3.1.conv1,-,"layer3,layer4",[],False,QuEST-orig,s1
+E08-QuEST-orig,E08-QuEST-orig__s1,iao8,BN,F,0.03093922697007656,0,-,-,-,-,[],False,QuEST-orig,s1
+E08-QuEST-orig,E08-QuEST-orig__s1,iao8,BN,Q,0.032044198364019394,0,-,-,-,-,[],False,QuEST-orig,s1
+E08-QuEST-orig,E08-QuEST-orig__s1,iao8,W,F/Q,0.036464087665081024,0,-,-,-,-,[],False,QuEST-orig,s1
+E08-QuEST-orig,E08-QuEST-orig__s3,iao8,A_clip,F,0.9878721237182617,17,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,QuEST-orig,s3
+E08-QuEST-orig,E08-QuEST-orig__s3,iao8,A_clip,Q,0.9878721237182617,17,"conv1, layer1.0.conv1, layer1.0.conv2, layer1.1.conv1, layer1.1.conv2, layer2.0.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",True,QuEST-orig,s3
+E08-QuEST-orig,E08-QuEST-orig__s3,iao8,BN,F,0.6207276582717896,0,-,"layer3.1.bn2, layer4.0.bn1, layer4.0.shortcut.1",layer4,layer4,[],False,QuEST-orig,s3
+E08-QuEST-orig,E08-QuEST-orig__s3,iao8,BN,Q,0.6196251511573792,0,-,"layer3.1.bn2, layer4.0.bn1, layer4.0.shortcut.1",layer4,layer4,[],False,QuEST-orig,s3
+E08-QuEST-orig,E08-QuEST-orig__s3,iao8,W,F/Q,0.039691291749477386,0,-,-,-,-,[],False,QuEST-orig,s3
+E08-Tian-actquant,E08-Tian-actquant__s1,qnnpack8,A_clip,F,0.009933775290846825,0,-,-,-,-,[],False,Tian-actquant,s1
+E08-Tian-actquant,E08-Tian-actquant__s1,qnnpack8,A_clip,Q,1.0,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,Tian-actquant,s1
+E08-Tian-actquant,E08-Tian-actquant__s1,qnnpack8,W,F/Q,1.0,1,blocks.7.conv2,blocks.7.conv2,layer4,layer4,[],False,Tian-actquant,s1
+E08-Tian-actquant,E08-Tian-actquant__s2,qnnpack8,A_clip,F,0.0033821871038526297,0,-,-,-,-,[],False,Tian-actquant,s2
+E08-Tian-actquant,E08-Tian-actquant__s2,qnnpack8,A_clip,Q,0.994363009929657,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,Tian-actquant,s2
+E08-Tian-actquant,E08-Tian-actquant__s2,qnnpack8,W,F/Q,0.9954904317855835,1,blocks.6.shortcut,blocks.6.shortcut,layer4,layer4,[],False,Tian-actquant,s2
+E08-Tian-alllayers,E08-Tian-alllayers__s1,qnnpack8,A_clip,F,0.005518763791769743,0,-,-,-,-,[],False,Tian-alllayers,s1
+E08-Tian-alllayers,E08-Tian-alllayers__s1,qnnpack8,A_clip,Q,0.996688723564148,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,Tian-alllayers,s1
+E08-Tian-alllayers,E08-Tian-alllayers__s1,qnnpack8,W,F/Q,0.996688723564148,1,blocks.1.conv1,blocks.1.conv1,layer1,layer1,['layer1'],False,Tian-alllayers,s1
+E08-Tian-alllayers,E08-Tian-alllayers__s2,qnnpack8,A_clip,F,0.005636978428810835,0,-,-,-,-,[],False,Tian-alllayers,s2
+E08-Tian-alllayers,E08-Tian-alllayers__s2,qnnpack8,A_clip,Q,0.9988725781440735,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,Tian-alllayers,s2
+E08-Tian-alllayers,E08-Tian-alllayers__s2,qnnpack8,W,F/Q,0.9988725781440735,1,blocks.7.conv1,blocks.7.conv1,layer4,layer4,[],False,Tian-alllayers,s2
+E08-Tian-orig,E08-Tian-orig__s1,qnnpack8,A_clip,F,0.004415011033415794,0,-,-,-,-,[],False,Tian-orig,s1
+E08-Tian-orig,E08-Tian-orig__s1,qnnpack8,A_clip,Q,0.9988962411880493,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,Tian-orig,s1
+E08-Tian-orig,E08-Tian-orig__s1,qnnpack8,W,F/Q,0.9988962411880493,1,blocks.7.conv1,blocks.7.conv1,layer4,layer4,[],False,Tian-orig,s1
+E08-Tian-orig,E08-Tian-orig__s2,qnnpack8,A_clip,F,0.0033821871038526297,0,-,-,-,-,[],False,Tian-orig,s2
+E08-Tian-orig,E08-Tian-orig__s2,qnnpack8,A_clip,Q,0.9954904317855835,21,"conv1, blocks.0.conv1, blocks.0.conv2, blocks.1.conv1, blocks.1.conv2, blocks.2.conv1",-,"stem,layer1,layer2,layer3,layer4,head",-,"['layer1', 'layer2', 'layer3', 'stem']",False,Tian-orig,s2
+E08-Tian-orig,E08-Tian-orig__s2,qnnpack8,W,F/Q,0.9977452158927917,1,blocks.7.conv1,blocks.7.conv1,layer4,layer4,[],False,Tian-orig,s2

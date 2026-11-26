@@ -129,6 +129,9 @@ def run(job, dev):
             x = norm((x01 + torch.randn(x01.shape, generator=gen, device=dev) * sg).clamp(0, 1)) if sg > 0 else probe
         M.logits(dm, x)
         per = [{"q": i, "name": acts[i][0], "above": v[0] / v[2], "below": v[1] / v[2], "max_ratio": v[3]} for i, v in sorted(stats.items())]
+        if not per:   # quanti4: dynamic per-batch ranges only, nothing calibrated to exceed
+            rows.append(head | {"kind": "reach", "src": src, "per_quantizer": [], "max_above": None, "max_ratio": None})
+            continue
         rows.append(head | {"kind": "reach", "src": src, "per_quantizer": per,
                             "max_above": max(p["above"] for p in per), "max_ratio": max(p["max_ratio"] for p in per)})
     C.set_acts(acts, "off")

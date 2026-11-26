@@ -15,9 +15,9 @@
 | E07 기존 탐지기 × 상태 | J (핵심·은폐) | 완료, 분석 작성 | E07_20261125_001 (144/144) | [prediction](../experiments/E07_baselines_by_state/prediction.md) · [analysis](../experiments/E07_baselines_by_state/analysis.md) · [LOG](../experiments/E07_baselines_by_state/LOG.md) |
 | E08 A5000 공격 변형 | J1′ 인과 | 요청 push됨, 모델 대기 | — | [REQUEST](../a5000/E08_attack_variants/REQUEST.md) · [prediction](../experiments/E08_attack_variants/prediction.md) |
 | E10 스위치 닫기 지도 | 정규화 | 예측 초안. E11–E13 뒤에 확정 | — | [prediction](../experiments/E10_switch_closure/prediction.md) |
-| E11 Tian-8 부호 섞기 모순 (계획서 실험 0) | A, 결정된 원소 | 진행 | E11_20261126_001 | [prediction](../experiments/E11_tian_sign_conflict/prediction.md) · [LOG](../experiments/E11_tian_sign_conflict/LOG.md) |
-| E12 잔차 특이값 (계획서 실험 5) | F | 진행 | E12_20261126_001 | [prediction](../experiments/E12_residual_spectrum/prediction.md) · [LOG](../experiments/E12_residual_spectrum/LOG.md) |
-| E13 구현 의존성 8-1·8-3·8-4 (계획서 실험 8) | I | 진행 | E13_20261126_001 | [prediction](../experiments/E13_implementation_dependence/prediction.md) · [LOG](../experiments/E13_implementation_dependence/LOG.md) |
+| E11 Tian-8 부호 섞기 모순 (계획서 실험 0) | A, 결정된 원소 | 완료, 분석 작성 | E11_20261126_001 (50/50) | [prediction](../experiments/E11_tian_sign_conflict/prediction.md) · [analysis](../experiments/E11_tian_sign_conflict/analysis.md) · [LOG](../experiments/E11_tian_sign_conflict/LOG.md) |
+| E12 잔차 특이값 (계획서 실험 5) | F | 완료, 분석 작성 | E12_20261126_001 (241/241) | [prediction](../experiments/E12_residual_spectrum/prediction.md) · [analysis](../experiments/E12_residual_spectrum/analysis.md) · [LOG](../experiments/E12_residual_spectrum/LOG.md) |
+| E13 구현 의존성 8-1·8-3·8-4 (계획서 실험 8) | I | 완료, 분석 작성 | E13_20261126_001 (171/171) | [prediction](../experiments/E13_implementation_dependence/prediction.md) · [analysis](../experiments/E13_implementation_dependence/analysis.md) · [LOG](../experiments/E13_implementation_dependence/LOG.md) |
 
 ## 2026-11-25
 

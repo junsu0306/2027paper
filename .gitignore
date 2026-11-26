@@ -9,3 +9,4 @@ scratch/
 experiments/*/results/rows.csv
 experiments/*/results/curves.csv
 experiments/*/results/conds.csv
+incoming/

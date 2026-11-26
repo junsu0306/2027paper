@@ -14,18 +14,18 @@
 | E06 a, b 스위치 곡선과 위치 | J1′, G-veto | 완료, 분석 작성 | E06_20261125_001 (242/242) | [prediction](../experiments/E06_switch_anatomy/prediction.md) · [analysis](../experiments/E06_switch_anatomy/analysis.md) · [LOG](../experiments/E06_switch_anatomy/LOG.md) |
 | E07 기존 탐지기 × 상태 | J (핵심·은폐) | 완료, 분석 작성 | E07_20261125_001 (144/144) | [prediction](../experiments/E07_baselines_by_state/prediction.md) · [analysis](../experiments/E07_baselines_by_state/analysis.md) · [LOG](../experiments/E07_baselines_by_state/LOG.md) |
 | E08 A5000 공격 변형 | J1′ 인과 | 요청 push됨, 모델 대기 | — | [REQUEST](../a5000/E08_attack_variants/REQUEST.md) · [prediction](../experiments/E08_attack_variants/prediction.md) |
-| E10 정규화 (축소판) | P | 진행 | E10_20261126_001 | [prediction](../experiments/E10_switch_closure/prediction.md) · [LOG](../experiments/E10_switch_closure/LOG.md) |
+| E10 정규화 (축소판) | P | 완료, 분석 작성 | E10_20261126_001 (171/171) | [prediction](../experiments/E10_switch_closure/prediction.md) · [analysis](../experiments/E10_switch_closure/analysis.md) · [LOG](../experiments/E10_switch_closure/LOG.md) |
 | E11 Tian-8 부호 섞기 모순 (계획서 실험 0) | A, 결정된 원소 | 완료, 분석 작성 | E11_20261126_001 (50/50) | [prediction](../experiments/E11_tian_sign_conflict/prediction.md) · [analysis](../experiments/E11_tian_sign_conflict/analysis.md) · [LOG](../experiments/E11_tian_sign_conflict/LOG.md) |
 | E12 잔차 특이값 (계획서 실험 5) | F | 완료, 분석 작성 | E12_20261126_001 (241/241) | [prediction](../experiments/E12_residual_spectrum/prediction.md) · [analysis](../experiments/E12_residual_spectrum/analysis.md) · [LOG](../experiments/E12_residual_spectrum/LOG.md) |
 | E13 구현 의존성 8-1·8-3·8-4 (계획서 실험 8) | I | 완료, 분석 작성 | E13_20261126_001 (171/171) | [prediction](../experiments/E13_implementation_dependence/prediction.md) · [analysis](../experiments/E13_implementation_dependence/analysis.md) · [LOG](../experiments/E13_implementation_dependence/LOG.md) |
 | E14 가중치 통계 확인 (묶음 밖·어려운 정상) | F, 코드 0, 칸 위치 | 완료, 분석 작성 | E14_20261126_001 (912/912) | [prediction](../experiments/E14_weight_statistics/prediction.md) · [analysis](../experiments/E14_weight_statistics/analysis.md) · [LOG](../experiments/E14_weight_statistics/LOG.md) |
-| E15 활성 쪽 잡음 (계획서 실험 1 변형 2) | A의 활성판, G-veto | 진행 | E15_20261126_001 | [prediction](../experiments/E15_activation_noise/prediction.md) · [LOG](../experiments/E15_activation_noise/LOG.md) |
-| E16 양자화기 세부 흔들기 (계획서 실험 1 변형 1, 8-2) | A, I | 진행 | E16_20261126_001 | [prediction](../experiments/E16_quantizer_perturbation/prediction.md) · [LOG](../experiments/E16_quantizer_perturbation/LOG.md) |
+| E15 활성 쪽 잡음 (계획서 실험 1 변형 2) | A의 활성판, G-veto | 완료, 분석 작성 | E15_20261126_001 (241/241) | [prediction](../experiments/E15_activation_noise/prediction.md) · [analysis](../experiments/E15_activation_noise/analysis.md) · [LOG](../experiments/E15_activation_noise/LOG.md) |
+| E16 양자화기 세부 흔들기 (계획서 실험 1 변형 1, 8-2) | A, I | 완료, 분석 작성 | E16_20261126_001 (241/241) | [prediction](../experiments/E16_quantizer_perturbation/prediction.md) · [analysis](../experiments/E16_quantizer_perturbation/analysis.md) · [LOG](../experiments/E16_quantizer_perturbation/LOG.md) |
 | E17 비트 낮추기 (계획서 실험 1 4단계) | A의 범위 | 완료, 분석 작성 | E17_20261126_001 (113/113) | [prediction](../experiments/E17_bit_sweep/prediction.md) · [analysis](../experiments/E17_bit_sweep/analysis.md) · [LOG](../experiments/E17_bit_sweep/LOG.md) |
-| E18 경계 거리 (계획서 실험 4) | D | 진행 | E18_20261126_001 | [prediction](../experiments/E18_boundary_distance/prediction.md) · [LOG](../experiments/E18_boundary_distance/LOG.md) |
-| E19 수렴 속도 (계획서 실험 6) | G | 진행 | E19_20261126_001 | [prediction](../experiments/E19_convergence_speed/prediction.md) · [LOG](../experiments/E19_convergence_speed/LOG.md) |
+| E18 경계 거리 (계획서 실험 4) | D | 완료, 분석 작성 | E18_20261126_001 (241/241) | [prediction](../experiments/E18_boundary_distance/prediction.md) · [analysis](../experiments/E18_boundary_distance/analysis.md) · [LOG](../experiments/E18_boundary_distance/LOG.md) |
+| E19 수렴 속도 (계획서 실험 6) | G | 완료, 분석 작성 | E19_20261126_001 (241/241) | [prediction](../experiments/E19_convergence_speed/prediction.md) · [analysis](../experiments/E19_convergence_speed/analysis.md) · [LOG](../experiments/E19_convergence_speed/LOG.md) |
 | E20 깨끗한 부모와의 차이 (계획서 실험 7 2단계) | H | 완료, 분석 작성 | E20_20261126_001 (27/27) | [prediction](../experiments/E20_parent_difference/prediction.md) · [analysis](../experiments/E20_parent_difference/analysis.md) · [LOG](../experiments/E20_parent_difference/LOG.md) |
-| E06 c 막는 채널, 포화와 S1 | G-veto, S1 | 진행 | E06c_20261126_001 | [prediction](../experiments/E06c_veto_and_saturation/prediction.md) · [LOG](../experiments/E06c_veto_and_saturation/LOG.md) |
+| E06 c 막는 채널, 포화와 S1 | G-veto, S1 | 완료, 분석 작성 | E06c_20261126_001 (102/102) | [prediction](../experiments/E06c_veto_and_saturation/prediction.md) · [analysis](../experiments/E06c_veto_and_saturation/analysis.md) · [LOG](../experiments/E06c_veto_and_saturation/LOG.md) |
 
 ## 2026-11-25
 
@@ -62,3 +62,4 @@
 - 2026-11-26T01:09Z: 계획서 대비 점검. 실험 0(일부), 5, 8을 빠뜨렸음 → 사용자 결정으로 E11(실험 0의 Tian-8 모순), E12(실험 5), E13(실험 8의 8-1·8-3·8-4)을 E10보다 먼저 함. 대응표는 PLAN_COVERAGE.md. 단계 2·3 정리의 데이터셋 범위를 고침(CIFAR-100 QuEST-8은 자르기로 안 켜짐).
 - 2026-11-26T01:55Z: E11–E13 완료와 분석. 현상 분석 종합 문서 PHENOMENA.md 작성(단계 2·3 정리를 합침). 추가 실험 E14(가중치 통계 확인)와 E10 개정을 제안, 승인 대기.
 - 2026-11-26T02:23Z: E14 완료. Ma의 저계수·경계 몰림은 묶음 밖·어려운 정상까지 완전히 갈림. Tian-8의 코드 0 몰림은 강하게 정규화된 정상과 겹침(기준 1 걸림).
+- 2026-11-26T05:41Z: 남은 현상 분석 8개 모두 완료(E15, E16, E18, E19, E06c, E10 분석 작성. E08은 모델 대기). 예측 밖의 큰 결과: FP32 BN 재추정만으로 Tian·Ma-8이 켜짐(E10). G-veto는 채널 하나(E06c). 경계 거리·수렴 속도는 대부분 계열에서 안 보임(E18, E19). 다음: PHENOMENA.md 종합.

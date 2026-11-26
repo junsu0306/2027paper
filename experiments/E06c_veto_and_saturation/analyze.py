@@ -26,7 +26,7 @@ def main(run):
     rows = R.rows(run)
     md = [f"# E06 c tables ({R.progress(run, N_JOBS)})", ""]
     # ---- V
-    V = [r for r in rows if r.get("job") == "V" or r["kind"] in ("asr", "single", "channels", "topk")]
+    V = [r for r in rows if r["job"] == "V"]
     vd = {}
     for r in V:
         vd.setdefault(r["model_key"], []).append(r)
@@ -56,11 +56,11 @@ def main(run):
               ("V4 clean inputs exceed on those channels <= 1/10 of trigger", cs.clean_over_trig_above.round(3).tolist(),
                bool((cs.clean_over_trig_above <= .1).all()))]
     # ---- S
-    S = pd.DataFrame([r for r in rows if r.get("job") == "S" and r.get("pos", -1) >= 0])
+    S = pd.DataFrame([r for r in rows if r["job"] == "S" and r.get("pos", -1) >= 0])
     if len(S):
-        n = S[S.group != "QCB"].groupby(["recipe", "pos", "pattern"]).skew.max().rename("nmax")
+        n = S[S.group != "QCB"].groupby(["recipe", "pos", "pattern"])["skew"].max().rename("nmax")
         S = S.join(n, on=["recipe", "pos", "pattern"])
-        S["hit"] = (S.skew > S.nmax) & (S.cls == S.target)
+        S["hit"] = (S["skew"] > S.nmax) & (S.cls == S.target)
         q = S[(S.group == "QCB")]
         hit_models = q[q.pattern == "binary"].groupby(["cell", "recipe", "model_key"]).hit.any().reset_index()
         hs = hit_models.groupby(["cell", "recipe"]).hit.mean().reset_index()

@@ -31,7 +31,7 @@
 | E24 층별 수렴 속도 (SPD의 CCS, F 대 켠 상태) | G 변형 | 완료, 분석 작성 | E24_20261126_001 (129/129) | [prediction](../experiments/E24_convergence_by_layer/prediction.md) · [analysis](../experiments/E24_convergence_by_layer/analysis.md) · [LOG](../experiments/E24_convergence_by_layer/LOG.md) |
 | E25 채널 단위 차분 기여도와 트리거 없는 막는 채널 찾기 | G-veto | 완료, 분석 작성 | E25_20261126_001 (119/119) | [prediction](../experiments/E25_channel_footprint/prediction.md) · [analysis](../experiments/E25_channel_footprint/analysis.md) · [LOG](../experiments/E25_channel_footprint/LOG.md) |
 | E26 부모 없이 QuEST가 고친 원소 알아보기 (Fisher) | H | 완료, 분석 작성 | E26_20261126_001 (23/23) | [prediction](../experiments/E26_fisher_edits/prediction.md) · [analysis](../experiments/E26_fisher_edits/analysis.md) · [LOG](../experiments/E26_fisher_edits/LOG.md) |
-| E27 E24 분류기 수렴 속도 결과의 복제 (QuEST W4A4 새 모델 17개, 정상 104개) | 자기 기준 신호 | 실행 중 | E27_20261126_001 (0/125) | [prediction](../experiments/E27_head_ccs_replication/prediction.md) · [LOG](../experiments/E27_head_ccs_replication/LOG.md) |
+| E27 E24 분류기 수렴 속도 결과의 복제 (QuEST W4A4 새 모델 17개, 정상 104개) | 자기 기준 신호 | 완료, 분석 작성 (**복제 실패**) | E27_20261126_001 (125/125) | [prediction](../experiments/E27_head_ccs_replication/prediction.md) · [analysis](../experiments/E27_head_ccs_replication/analysis.md) · [LOG](../experiments/E27_head_ccs_replication/LOG.md) |
 
 ## 2026-11-25
 
@@ -74,3 +74,4 @@
 - 2026-11-26T08:50Z: E08 첫 전달 판독: QuEST aonly는 활성 자르기만 스위치(3/3, 가중치 0/3, J1′ 2 안 걸림). Tian actquant는 스위치가 가중치 그대로(예측 틀림). alllayers s1은 layer1로 옮김. E26 완료: 고친 원소는 깨끗한 Fisher 5–20 % 띠(QCB 자신의 Fisher에도 남음), 트리거 없는 대용 마스크 정밀도 .36(우연 .15), layer3 안에서는 거의 우연. E24·E25: 고치기 전 코드의 작업자가 남아 있던 것을 멈추고 해당 작업만 다시 돌림.
 - 2026-11-26T09:27Z: E21, E24, E25 완료·분석. 요지: (1) 증강 BN 재추정도 Ma-8·Tian을 켬 → 저장 통계가 은폐의 일부(E21 A). (2) iao4는 4비트 격자만 맞으면 되고 활성 보정 세부는 무관, 스위치는 stem·layer1에 퍼짐, 분류기만 W4A4는 0/21(E21 B). (3) QuEST W4A4는 Q 분류기에서 표적 수렴이 7–10배 빨라짐(z 15–23, 정상 ≤ 1.1) — 스위치가 아니라 발자국(E24). (4) QuEST-8 막는 채널을 무작위 패치로 찾음(E25). PHENOMENA.md 갱신.
 - 2026-11-26T11:27Z: 사용자 승인(복제). E27 예측 커밋 후 시작. 시작 전 E24 행 사후 확인: 후보를 "F에서 가장 빠른 클래스"로 하면 대조군 하나가 z 17 → 1차 후보는 E24 그대로 MM-BD(E24 analysis 덧붙임 2).
+- 2026-11-26T12:03Z: E27 완료. **E24 복제 실패**(기준 1): 새 QuEST W4A4 중 z_mmbd > 5가 4/17(정상 2/104). MM-BD 후보가 표적인 것 7/17. CIFAR-10의 표적 지름길은 참 표적 기준 10/11로 남지만 트리거 없이 못 고름. CIFAR-100은 현상 없음(0/6). QuEST W4A4는 다시 자기 기준 신호 없음. PHENOMENA 정정.

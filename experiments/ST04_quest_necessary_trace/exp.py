@@ -4,15 +4,15 @@ Jobs = (model, recipe). W4A4 arm (iao4): QuEST W4A4, no-poison QuEST-IAO-W4A4 co
 normals. 8-bit arm (iao8): QuEST-8, QuEST-IAO-W8A8 controls, QAT-W8weight normals, the same unaware normals.
 Everything starts from R = F with BN statistics re-estimated on the defender's unlabeled images (FP32, augmentation, ST03
 procedure), so no readout depends on the stored BN statistics. Q = full deployment of R's weights rounded on the recipe grid
-(deploy.build, train-mode calibration on the first N_CAL training images; iao re-estimates BN anyway).
-  P1/P4 grid  (W4A4 arm only) per stage: 8 sign-randomised roundings, a 1/16-step grid shift, and for QuEST W4A4 a 1/2-step
+(deploy.build, train-mode calibration on the whole training set as deploysim; iao re-estimates BN anyway).
+  P1/P4 grid  (W4A4 arm only) per stage: 16 sign-randomised roundings, a 1/16-step grid shift, and for QuEST W4A4 a 1/2-step
               shift of that stage only; readouts KL(p_R || p_X), per-stage BN-input deviation D (vs R), QuEST: acc, ASR.
-  P2 station  gradients of the clean cross-entropy (2,048 labeled training images, no augmentation) w.r.t. conv/linear
+  P2 station  gradients of the clean cross-entropy (8,192 labeled training images, no augmentation) w.r.t. conv/linear
               weights in R (g_F) and in Q (g_Q, straight-through quantizers); per stage norms, cosines, balance residual.
   P3 headroom per conv->BN pair in R: one-layer interval bound of each output channel given the clean per-channel range of
               the conv input (probe), after BN, minus the clean maximum, in clean-std units.
-  P5 BN shift each BN channel's running mean lowered by 4 running std (output + 4 gamma), in R and in Q, 128 probe images;
-              per channel: class-specific logit change in R and Q and their difference (128 probe images).
+  P5 BN shift each BN channel's running mean lowered by 4 running std (output + 4 gamma), in R and in Q, 256 probe images;
+              per channel: class-specific logit change in R and Q and their difference.
 Labels and the trigger are used only where stated (P2 labels; acc/ASR for QuEST as mechanism checks).
 """
 from __future__ import annotations
@@ -33,10 +33,10 @@ from qcbobs import cohort, components as C, data, deploy, grids, measures as M  
 from qcbobs.env import DATA  # noqa: E402
 from qcbobs.models import load, trigger  # noqa: E402
 
-N_SIGN = 8
-N_CAL = 10_000          # training images for the iao train-mode calibration (E21 B: 512-10,000 leave the switch on)
-N_GRAD = 2048
-N_SHIFT = 128
+N_SIGN = 16
+N_CAL = None            # training images for the iao train-mode calibration; None = the whole training set (= deploysim)
+N_GRAD = 8192
+N_SHIFT = 256
 SHIFT = 4.0
 VGG_BLOCKS = (2, 2, 3, 3, 3)
 ARMS = {"iao4": ("QuEST-W4A4", "control-QuEST-W4A4", "QAT-W4A4-IAO", "unaware"),
@@ -238,7 +238,7 @@ def run(job, dev):
     F, norm, info = load(r.data_dir, dev)
     K = int(info["num_classes_w"])
     imgs = data.load(r.dataset)
-    imgs_cal = dataclasses.replace(imgs, train_u8=imgs.train_u8[:N_CAL])
+    imgs_cal = imgs if N_CAL is None else dataclasses.replace(imgs, train_u8=imgs.train_u8[:N_CAL])
     xp = norm(imgs.probe.to(dev))
     u8 = E10.defender_images(r.dataset).train_u8[:2000]
     R = E21.bn_reest(F, E21.batches(u8, norm, dev, aug=True))

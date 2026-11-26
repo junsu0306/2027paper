@@ -45,7 +45,7 @@
 | ST01 배포를 아는 모델인가 (실제 반올림 대 부호 무작위, 7개 형식, 라벨 없는 KL) | 1단계, N1·N2·N5 | 중단(사용자 지시), 분석 작성: **기준 1·2 걸림** | ST01_20261126_001 (215/228) | [prediction](../experiments/ST01_deployment_awareness/prediction.md) · [analysis](../experiments/ST01_deployment_awareness/analysis.md) · [LOG](../experiments/ST01_deployment_awareness/LOG.md) |
 | ST02 배포 교환가능성 검정 (계열 공통 1단계: 가중치 7형식·전체 배포 4비트·BN, 부호 무작위 16번, kl·엔트로피) | 1단계, N1·N2·N5 | 완료, 분석 작성: **기준 1 걸림** | ST02_20261126_001 (228/228) | [prediction](../experiments/ST02_exchangeability/prediction.md) · [analysis](../experiments/ST02_exchangeability/analysis.md) · [LOG](../experiments/ST02_exchangeability/LOG.md) |
 | ST03 BN 통계: 구별(낡음 비·엔트로피 변화), 위조(λ 0·.5·1)가 QCB를 망가뜨리나, 위조 뒤 남는 것 (기존 228 + 보류 batch_h 160) | 1단계, N7 후보 | 완료, 분석 작성: 기준 안 걸림 | ST03_20261126_001 (388/388) | [prediction](../experiments/ST03_bn_statistics/prediction.md) · [analysis](../experiments/ST03_bn_statistics/analysis.md) · [LOG](../experiments/ST03_bn_statistics/LOG.md) |
-| ST04 QuEST의 필요한 흔적: 필요한 층(트리거), 정류점 잔차, 잠자는 고이득 채널, 양자화 경로 내부 통계, BN 공간 섭동 (QuEST W4A4·8, 쌍둥이, 보류 batch_h) | 2단계, 위조 불가 흔적 | 실행 중 | ST04_20261126_001 (0/219) | [prediction](../experiments/ST04_quest_necessary_trace/prediction.md) · [LOG](../experiments/ST04_quest_necessary_trace/LOG.md) |
+| ST04 QuEST의 필요한 흔적: 필요한 층(트리거), 정류점 잔차, 잠자는 고이득 채널, 양자화 경로 내부 통계, BN 공간 섭동 (QuEST W4A4·8, 쌍둥이, 보류 batch_h) | 2단계, 위조 불가 흔적 | 실행 중 | ST04_20261126_002 (0/219) | [prediction](../experiments/ST04_quest_necessary_trace/prediction.md) · [LOG](../experiments/ST04_quest_necessary_trace/LOG.md) |
 
 ## 2026-11-25
 

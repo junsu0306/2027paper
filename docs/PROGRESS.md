@@ -22,6 +22,8 @@
 | E15 활성 쪽 잡음 (계획서 실험 1 변형 2) | A의 활성판, G-veto | 진행 | E15_20261126_001 | [prediction](../experiments/E15_activation_noise/prediction.md) · [LOG](../experiments/E15_activation_noise/LOG.md) |
 | E16 양자화기 세부 흔들기 (계획서 실험 1 변형 1, 8-2) | A, I | 진행 | E16_20261126_001 | [prediction](../experiments/E16_quantizer_perturbation/prediction.md) · [LOG](../experiments/E16_quantizer_perturbation/LOG.md) |
 | E17 비트 낮추기 (계획서 실험 1 4단계) | A의 범위 | 진행 | E17_20261126_001 | [prediction](../experiments/E17_bit_sweep/prediction.md) · [LOG](../experiments/E17_bit_sweep/LOG.md) |
+| E18 경계 거리 (계획서 실험 4) | D | 진행 | E18_20261126_001 | [prediction](../experiments/E18_boundary_distance/prediction.md) · [LOG](../experiments/E18_boundary_distance/LOG.md) |
+| E19 수렴 속도 (계획서 실험 6) | G | 진행 | E19_20261126_001 | [prediction](../experiments/E19_convergence_speed/prediction.md) · [LOG](../experiments/E19_convergence_speed/LOG.md) |
 
 ## 2026-11-25
 

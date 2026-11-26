@@ -18,7 +18,7 @@
 | E11 Tian-8 부호 섞기 모순 (계획서 실험 0) | A, 결정된 원소 | 완료, 분석 작성 | E11_20261126_001 (50/50) | [prediction](../experiments/E11_tian_sign_conflict/prediction.md) · [analysis](../experiments/E11_tian_sign_conflict/analysis.md) · [LOG](../experiments/E11_tian_sign_conflict/LOG.md) |
 | E12 잔차 특이값 (계획서 실험 5) | F | 완료, 분석 작성 | E12_20261126_001 (241/241) | [prediction](../experiments/E12_residual_spectrum/prediction.md) · [analysis](../experiments/E12_residual_spectrum/analysis.md) · [LOG](../experiments/E12_residual_spectrum/LOG.md) |
 | E13 구현 의존성 8-1·8-3·8-4 (계획서 실험 8) | I | 완료, 분석 작성 | E13_20261126_001 (171/171) | [prediction](../experiments/E13_implementation_dependence/prediction.md) · [analysis](../experiments/E13_implementation_dependence/analysis.md) · [LOG](../experiments/E13_implementation_dependence/LOG.md) |
-| E14 가중치 통계 확인 (묶음 밖·어려운 정상) | F, 코드 0, 칸 위치 | 진행 | E14_20261126_001 | [prediction](../experiments/E14_weight_statistics/prediction.md) · [LOG](../experiments/E14_weight_statistics/LOG.md) |
+| E14 가중치 통계 확인 (묶음 밖·어려운 정상) | F, 코드 0, 칸 위치 | 완료, 분석 작성 | E14_20261126_001 (912/912) | [prediction](../experiments/E14_weight_statistics/prediction.md) · [analysis](../experiments/E14_weight_statistics/analysis.md) · [LOG](../experiments/E14_weight_statistics/LOG.md) |
 
 ## 2026-11-25
 
@@ -54,3 +54,4 @@
 
 - 2026-11-26T01:09Z: 계획서 대비 점검. 실험 0(일부), 5, 8을 빠뜨렸음 → 사용자 결정으로 E11(실험 0의 Tian-8 모순), E12(실험 5), E13(실험 8의 8-1·8-3·8-4)을 E10보다 먼저 함. 대응표는 PLAN_COVERAGE.md. 단계 2·3 정리의 데이터셋 범위를 고침(CIFAR-100 QuEST-8은 자르기로 안 켜짐).
 - 2026-11-26T01:55Z: E11–E13 완료와 분석. 현상 분석 종합 문서 PHENOMENA.md 작성(단계 2·3 정리를 합침). 추가 실험 E14(가중치 통계 확인)와 E10 개정을 제안, 승인 대기.
+- 2026-11-26T02:23Z: E14 완료. Ma의 저계수·경계 몰림은 묶음 밖·어려운 정상까지 완전히 갈림. Tian-8의 코드 0 몰림은 강하게 정규화된 정상과 겹침(기준 1 걸림).

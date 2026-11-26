@@ -58,10 +58,20 @@ def mean_input(model, pos, xn):
     return torch.cat(acc).mean(0)
 
 
+def fused_from(model, i, x):
+    """FusedResNet18.forward from block i (MVD quantization.py), on the block input x."""
+    for block in model.blocks[i:]:
+        out = Fn.relu(block.conv1(x))
+        out = block.conv2(out)
+        shortcut = block.shortcut(x) if block.shortcut is not None else x
+        x = Fn.relu(out + shortcut)
+    return model.linear(torch.flatten(Fn.adaptive_avg_pool2d(x, 1), 1))
+
+
 def ccs(model, pos, z0, K, dev, rows=None, lr=LR, lf=LF, max_steps=MAX_STEPS):
     """Calibrated convergence steps for the classes in `rows` (default all K) from start z0 (shape of one input)."""
     rows = list(range(K)) if rows is None else rows
-    mod = dict(model.named_modules())[pos]
+    mod = dict(model.named_modules())[M.resolve_name(model, pos)]
     inj = Inject()
     direct = pos == "linear"
     h = None if direct else mod.register_forward_pre_hook(inj, prepend=True)
@@ -69,7 +79,18 @@ def ccs(model, pos, z0, K, dev, rows=None, lr=LR, lf=LF, max_steps=MAX_STEPS):
     x = torch.zeros(n, 3, 32, 32, device=dev)
     y = torch.tensor(rows, device=dev)
     # direct: the head alone (its own pre-hooks, e.g. an activation quantizer, still act)
-    fwd = (lambda zz, xx: mod(zz)) if direct else (lambda zz, xx: (setattr(inj, "z", zz), model(xx))[1])
+    fused = type(model).__name__ == "FusedResNet18" and not direct
+    if fused:                     # FusedResNet18.forward does not call its blocks as modules: run the blocks from p
+        if h is not None:
+            h.remove()
+            h = None
+        start = int(M.resolve_name(model, pos).split(".")[1])
+    if direct:
+        fwd = lambda zz, xx: mod(zz)  # noqa: E731
+    elif fused:
+        fwd = lambda zz, xx: fused_from(model, start, zz)  # noqa: E731
+    else:
+        fwd = lambda zz, xx: (setattr(inj, "z", zz), model(xx))[1]  # noqa: E731
     try:
         with torch.no_grad():
             l0 = Fn.cross_entropy(fwd(z0.expand(K, *z0.shape).contiguous(), torch.zeros(K, 3, 32, 32, device=dev)),

@@ -131,3 +131,19 @@ def prop_score(h) -> tuple[float, int]:
     sd = p.std()
     ratio = float(np.delete(p, k).std() / sd) if sd > 0 else 1.0
     return float(1 - (1 - p[k]) * ratio), k
+
+
+def resolve_name(model: nn.Module, name: str) -> str:
+    """Module name in `model` for a CIFARResNet18 name (layerK.j[.rest] / linear). The fbgemm8 / qnnpack8 replicas
+    (FusedResNet18) name the BasicBlocks blocks.N with N = 2 (K - 1) + j; other names are unchanged."""
+    names = dict(model.named_modules())
+    if name in names:
+        return name
+    parts = name.split(".")
+    if parts[0].startswith("layer") and len(parts) > 1 and parts[1].isdigit():
+        alt = ".".join([f"blocks.{2 * (int(parts[0][5:]) - 1) + int(parts[1])}"] + parts[2:])
+        if alt in names:
+            return alt
+        if alt.endswith(".0") and alt[:-2] in names:     # shortcut.0 -> shortcut
+            return alt[:-2]
+    raise KeyError(name)

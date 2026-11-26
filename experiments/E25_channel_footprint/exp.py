@@ -1,7 +1,8 @@
 """E25: internal footprint of the switch, channel by channel, without a trigger (prediction.md).
 
-Positions: the inputs of every Conv2d / Linear (where deploysim puts its activation quantizers); the shortcut conv input
-is the block input (same tensor as conv1's) and is not repeated.
+Positions: the inputs of every Conv2d / Linear except the first conv (where deploysim puts its activation quantizers).
+The shortcut conv sees the same tensor as the block's conv1 but has its own quantizer and path, so both are positions
+(an ablation or clip at one of them acts on that path only).
 1. Contribution:  e_X[c, k] = mean over clean images of z_k(x) - z_k(x with channel c set to its clean mean), in state X
    (F, and Q = the recipe deployment). Candidate-specific part s_X[c] = e_X[c, cand] - median_{k != cand} e_X[c, k];
    differential d[c] = s_Q[c] - s_F[c].
@@ -55,7 +56,7 @@ def jobs():
 def positions(model):
     out = []
     for n, m in model.named_modules():
-        if isinstance(m, (nn.Conv2d, nn.Linear)) and n != "conv1" and "shortcut" not in n:
+        if isinstance(m, (nn.Conv2d, nn.Linear)) and n != "conv1":
             out.append(n)
     return out
 
@@ -70,7 +71,7 @@ class Swap:
 
 @torch.no_grad()
 def channel_means(model, pos, xn):
-    mods = dict(model.named_modules())
+    mods = {p: dict(model.named_modules())[M.resolve_name(model, p)] for p in pos}
     acc = {}
     hs = []
     for p in pos:
@@ -87,7 +88,7 @@ def channel_means(model, pos, xn):
 @torch.no_grad()
 def contributions(model, pos, xn, means, K):
     """{position: tensor [C, K]} of mean logit drop when the channel is set to its mean."""
-    mods = dict(model.named_modules())
+    mods = {p: dict(model.named_modules())[M.resolve_name(model, p)] for p in pos}
     z0 = model(xn)
     out = {}
     n = len(xn)
@@ -181,12 +182,13 @@ def run(job, dev):
     pos = positions(F)
     DS = deploy._ds()
     q = DS.deployed(F, RECIPES[rec]["view_key"], norm(imgs.cal.to(dev)), train_x=deploy.train_arg(rec, imgs, norm), device=str(dev)).eval()
-    ranges = {}
+    qr = {}
     for n, a in C.act_quantizers(q):
         try:
-            ranges[n] = C._range(a)
+            qr[n] = C._range(a)
         except Exception:  # noqa: BLE001
             pass
+    ranges = {p: qr[M.resolve_name(q, p)] for p in pos if M.resolve_name(q, p) in qr}
     eF = contributions(F, pos, clean, channel_means(F, pos, clean), K)
     eQ = contributions(q, pos, clean, channel_means(q, pos, clean), K)
     out = {}

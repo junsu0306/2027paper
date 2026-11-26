@@ -15,3 +15,7 @@
   - 2차 QuEST W4A4는 8개가 아니라 7개입니다(E04 결과 0/8 → 0/7, 결론은 같음).
 - **앞으로**: 새 코호트는 쓰기 전에 이 스크립트로 점검하고, 같은 가중치 묶음에서는 model_key가 앞서는 것 하나만 씁니다. 이미 돈 실행의 판독은 같은 규칙으로 하나를 빼고 다시 셉니다.
 - **덤으로 얻은 것**: 같은 가중치에 NC를 두 번 돌린 셈입니다(E07). 이상 지수가 F에서 2.27과 1.25, Qw에서 1.52와 3.71로 달랐습니다. NC 경보는 문턱(2) 근처에서 재현성이 낮습니다.
+
+## 2026-11-26T16:01Z: batch_h
+
+`check_duplicates.py batch1 batch2 batch_x batch_xn e08 batch_h`: 402 models, 399 distinct weights. New pair: `H-C10-QuEST-W4A4__9ec83501eb` (batch_h) = `QuEST-W4A4__40a6662040` (batch2), different file hash. The batch_h key is dropped (not held out), so batch_h counts 160 models (QuEST W4A4: ResNet18 CIFAR-10 7, VGG16-BN 12).

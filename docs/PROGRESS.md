@@ -44,6 +44,7 @@
 |---|---|---|---|---|
 | ST01 배포를 아는 모델인가 (실제 반올림 대 부호 무작위, 7개 형식, 라벨 없는 KL) | 1단계, N1·N2·N5 | 중단(사용자 지시), 분석 작성: **기준 1·2 걸림** | ST01_20261126_001 (215/228) | [prediction](../experiments/ST01_deployment_awareness/prediction.md) · [analysis](../experiments/ST01_deployment_awareness/analysis.md) · [LOG](../experiments/ST01_deployment_awareness/LOG.md) |
 | ST02 배포 교환가능성 검정 (계열 공통 1단계: 가중치 7형식·전체 배포 4비트·BN, 부호 무작위 16번, kl·엔트로피) | 1단계, N1·N2·N5 | 완료, 분석 작성: **기준 1 걸림** | ST02_20261126_001 (228/228) | [prediction](../experiments/ST02_exchangeability/prediction.md) · [analysis](../experiments/ST02_exchangeability/analysis.md) · [LOG](../experiments/ST02_exchangeability/LOG.md) |
+| ST03 BN 통계: 구별(낡음 비·엔트로피 변화), 위조(λ 0·.5·1)가 QCB를 망가뜨리나, 위조 뒤 남는 것 (기존 228 + 보류 batch_h 160) | 1단계, N7 후보 | 실행 중 | ST03_20261126_001 (0/388) | [prediction](../experiments/ST03_bn_statistics/prediction.md) · [LOG](../experiments/ST03_bn_statistics/LOG.md) |
 
 ## 2026-11-25
 
@@ -92,6 +93,7 @@
 - 2026-11-26T13:45Z: [2부] ST01 중단(215/228)·분석. 부호 무작위 4번은 영 기준으로 너무 흔들리고(뽑기끼리 1.46배), F와의 거리는 QAT의 맞춤을 못 봄 → 기준 1·2 걸림. 어긋남은 강함(Ma-8 253배, Ma W4A4·Qu-ANTI 8·Tian-8 3.5–3.8배, 정상 최대 2.9). 사후 단서: Qu-ANTI 4 전체 배포 quanti4 맞춤.
 - 2026-11-26T13:53Z: [2부] ST02 예측 커밋 후 시작: 1단계를 계열 공통으로 다시 설계(사용자 지시). 배포가 바꾸는 파라미터(가중치, BN 통계)마다 실제 변화 대 부호 무작위 변화, 모델마다 z.
 - 2026-11-26T15:11Z: [2부] ST02 완료. 기준 1 걸림(정상 93 % 걸림): BN 성분의 부호 무작위 영 기준이 틀림(재추정 잔차는 채널끼리 일관됨), quanti4 엔트로피는 0 칸 효과. 가중치 반올림 kl은 영 기준이 맞으나 1부의 가중치 스위치 계열만 잡음. QAT의 Q 쪽 맞춤은 엔트로피로도 안 보임. 사후 단서: BN 재추정 뒤 깨끗한 입력의 엔트로피 상승 — Ma 22/22, Tian W4A4 17/17, Tian-8 20/26, Tian 대조군 0/5, 정상 최대 +.094.
+- 2026-11-26T16:15Z: [2부] 보류 묶음 batch_h(160개: Data에 쓰지 않은 유효 모델이 많았음 — QuEST W4A4만 49개; 앞서 "QuEST W4A4는 모두 봤다"는 말은 틀렸음) 만들고 ST03 예측 커밋 후 시작. ST04(QuEST W4A4의 필요한 흔적) 코드 작성 중.
 
 ## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
 

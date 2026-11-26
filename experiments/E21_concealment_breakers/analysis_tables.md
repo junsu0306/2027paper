@@ -1,4 +1,4 @@
-# E21 tables (169/207 jobs done, 0 errors)
+# E21 tables (207/207 jobs done, 0 errors)
 
 ## A: share of QCB on, per family and BN state
 
@@ -57,79 +57,81 @@
 | normal-light | 0.004 | 0.002 | 0.006 | 0.004 | 0.001 | 0.001 | 0.001 | 0.002 |
 | normal-standard | 0.004 | 0.002 | 0.007 | 0.004 | 0.001 | 0.001 | 0.001 | 0.002 |
 
-normals + controls max: {'d_mean_max': 1.509, 'd_mean_avg': 0.612}
+normals max: {'d_mean_max': 0.192, 'd_mean_avg': 0.059}
+
+controls (no-poison attack pipeline) by cell: {'control-nopoison': 0.612}
 
 ## B: QuEST W4A4 (all datasets) per state
 
 | state | n | on | asr_med | conceal_med | normals_agree_ref |
 |---|---|---|---|---|---|
-| F | 7 | 0.000 | 0.019 | 9.637 | nan |
-| ref | 7 | 1.000 | 0.948 | -9.805 | nan |
-| deploysim | 7 | 1.000 | 0.948 | -9.805 | nan |
-| mom:0.01 | 7 | 1.000 | 0.949 | -10.000 | nan |
-| mom:0.5 | 7 | 1.000 | 0.951 | -9.975 | nan |
-| mom:1.0 | 7 | 1.000 | 0.948 | -9.915 | nan |
-| mom:minmax | 7 | 1.000 | 0.969 | -12.640 | nan |
-| n:512 | 7 | 1.000 | 0.892 | -5.892 | nan |
-| n:2048 | 7 | 1.000 | 0.940 | -8.747 | nan |
-| n:10000 | 7 | 1.000 | 0.953 | -11.013 | nan |
-| src:def | 7 | 1.000 | 0.948 | -11.033 | nan |
-| src:aug | 7 | 1.000 | 0.970 | -14.657 | nan |
-| seed:1 | 7 | 1.000 | 0.951 | -10.109 | nan |
-| seed:2 | 7 | 1.000 | 0.950 | -10.504 | nan |
-| bs:32 | 7 | 1.000 | 0.927 | -9.179 | nan |
-| bs:512 | 7 | 1.000 | 0.962 | -11.441 | nan |
-| bn:eval | 7 | 1.000 | 0.906 | -8.865 | nan |
-| bn:fp_then_eval | 7 | 0.857 | 0.911 | -9.209 | nan |
-| pools:off | 7 | 1.000 | 0.948 | -9.805 | nan |
-| bits:W4A8 | 7 | 0.429 | 0.419 | 0.318 | nan |
-| bits:W8A4 | 7 | 0.714 | 0.591 | -1.999 | nan |
-| bits:W4A6 | 7 | 0.429 | 0.445 | -0.086 | nan |
-| bits:W6A4 | 7 | 0.857 | 0.725 | -4.218 | nan |
-| bits:W5A4 | 7 | 0.714 | 0.633 | -2.842 | nan |
-| bits:W4A5 | 7 | 0.714 | 0.637 | -2.733 | nan |
-| stage:stem | 7 | 0.143 | 0.246 | 2.782 | nan |
-| stage:layer1 | 7 | 0.429 | 0.314 | 1.606 | nan |
-| stage:layer2 | 7 | 0.000 | 0.073 | 5.978 | nan |
-| stage:layer3 | 7 | 0.000 | 0.028 | 9.186 | nan |
-| stage:layer4 | 7 | 0.000 | 0.021 | 8.653 | nan |
-| stage:head | 7 | 0.000 | 0.020 | 10.285 | nan |
+| F | 21 | 0.000 | 0.030 | 9.085 | nan |
+| ref | 21 | 1.000 | 0.962 | -10.285 | nan |
+| deploysim | 21 | 1.000 | 0.962 | -10.285 | nan |
+| mom:0.01 | 21 | 1.000 | 0.965 | -10.596 | 0.899 |
+| mom:0.5 | 21 | 1.000 | 0.966 | -10.036 | 0.897 |
+| mom:1.0 | 21 | 1.000 | 0.962 | -10.011 | 0.891 |
+| mom:minmax | 21 | 1.000 | 0.969 | -11.230 | 0.796 |
+| n:512 | 21 | 1.000 | 0.922 | -6.982 | 0.874 |
+| n:2048 | 21 | 1.000 | 0.963 | -9.697 | 0.895 |
+| n:10000 | 21 | 1.000 | 0.970 | -11.013 | 0.895 |
+| src:def | 21 | 1.000 | 0.960 | -11.033 | 0.896 |
+| src:aug | 21 | 1.000 | 0.975 | -14.168 | 0.852 |
+| seed:1 | 21 | 1.000 | 0.970 | -10.654 | 0.898 |
+| seed:2 | 21 | 1.000 | 0.971 | -10.562 | 0.898 |
+| bs:32 | 21 | 1.000 | 0.940 | -8.608 | 0.896 |
+| bs:512 | 21 | 1.000 | 0.979 | -11.802 | 0.878 |
+| bn:eval | 21 | 1.000 | 0.900 | -6.992 | 0.855 |
+| bn:fp_then_eval | 21 | 0.952 | 0.894 | -6.898 | 0.857 |
+| pools:off | 21 | 1.000 | 0.962 | -10.285 | 1.000 |
+| bits:W4A8 | 21 | 0.381 | 0.459 | 0.121 | 0.891 |
+| bits:W8A4 | 21 | 0.524 | 0.546 | -0.962 | 0.886 |
+| bits:W4A6 | 21 | 0.571 | 0.545 | -0.540 | 0.891 |
+| bits:W6A4 | 21 | 0.714 | 0.573 | -1.120 | 0.886 |
+| bits:W5A4 | 21 | 0.571 | 0.504 | -0.425 | 0.883 |
+| bits:W4A5 | 21 | 0.762 | 0.637 | -1.619 | 0.890 |
+| stage:stem | 21 | 0.048 | 0.244 | 3.172 | 0.906 |
+| stage:layer1 | 21 | 0.381 | 0.356 | 1.596 | 0.886 |
+| stage:layer2 | 21 | 0.000 | 0.071 | 6.815 | 0.883 |
+| stage:layer3 | 21 | 0.000 | 0.032 | 9.193 | 0.886 |
+| stage:layer4 | 21 | 0.000 | 0.025 | 8.723 | 0.889 |
+| stage:head | 21 | 0.000 | 0.023 | 10.441 | 0.888 |
 
 ## B: share on by dataset
 
-| state | C100-R18-QuEST-W4A4 | GTSRB-R18-QuEST-W4A4 |
-|---|---|---|
-| F | 0.000 | 0.000 |
-| ref | 1.000 | 1.000 |
-| deploysim | 1.000 | 1.000 |
-| mom:0.01 | 1.000 | 1.000 |
-| mom:0.5 | 1.000 | 1.000 |
-| mom:1.0 | 1.000 | 1.000 |
-| mom:minmax | 1.000 | 1.000 |
-| n:512 | 1.000 | 1.000 |
-| n:2048 | 1.000 | 1.000 |
-| n:10000 | 1.000 | 1.000 |
-| src:def | 1.000 | 1.000 |
-| src:aug | 1.000 | 1.000 |
-| seed:1 | 1.000 | 1.000 |
-| seed:2 | 1.000 | 1.000 |
-| bs:32 | 1.000 | 1.000 |
-| bs:512 | 1.000 | 1.000 |
-| bn:eval | 1.000 | 1.000 |
-| bn:fp_then_eval | 1.000 | 0.500 |
-| pools:off | 1.000 | 1.000 |
-| bits:W4A8 | 0.600 | 0.000 |
-| bits:W8A4 | 0.600 | 1.000 |
-| bits:W4A6 | 0.600 | 0.000 |
-| bits:W6A4 | 0.800 | 1.000 |
-| bits:W5A4 | 0.600 | 1.000 |
-| bits:W4A5 | 1.000 | 0.000 |
-| stage:stem | 0.200 | 0.000 |
-| stage:layer1 | 0.600 | 0.000 |
-| stage:layer2 | 0.000 | 0.000 |
-| stage:layer3 | 0.000 | 0.000 |
-| stage:layer4 | 0.000 | 0.000 |
-| stage:head | 0.000 | 0.000 |
+| state | C100-R18-QuEST-W4A4 | GTSRB-R18-QuEST-W4A4 | QuEST-W4A4 |
+|---|---|---|---|
+| F | 0.000 | 0.000 | 0.000 |
+| ref | 1.000 | 1.000 | 1.000 |
+| deploysim | 1.000 | 1.000 | 1.000 |
+| mom:0.01 | 1.000 | 1.000 | 1.000 |
+| mom:0.5 | 1.000 | 1.000 | 1.000 |
+| mom:1.0 | 1.000 | 1.000 | 1.000 |
+| mom:minmax | 1.000 | 1.000 | 1.000 |
+| n:512 | 1.000 | 1.000 | 1.000 |
+| n:2048 | 1.000 | 1.000 | 1.000 |
+| n:10000 | 1.000 | 1.000 | 1.000 |
+| src:def | 1.000 | 1.000 | 1.000 |
+| src:aug | 1.000 | 1.000 | 1.000 |
+| seed:1 | 1.000 | 1.000 | 1.000 |
+| seed:2 | 1.000 | 1.000 | 1.000 |
+| bs:32 | 1.000 | 1.000 | 1.000 |
+| bs:512 | 1.000 | 1.000 | 1.000 |
+| bn:eval | 1.000 | 1.000 | 1.000 |
+| bn:fp_then_eval | 1.000 | 0.750 | 1.000 |
+| pools:off | 1.000 | 1.000 | 1.000 |
+| bits:W4A8 | 0.500 | 0.250 | 0.360 |
+| bits:W8A4 | 0.670 | 1.000 | 0.270 |
+| bits:W4A6 | 0.500 | 0.250 | 0.730 |
+| bits:W6A4 | 0.830 | 1.000 | 0.550 |
+| bits:W5A4 | 0.500 | 1.000 | 0.450 |
+| bits:W4A5 | 1.000 | 0.500 | 0.730 |
+| stage:stem | 0.170 | 0.000 | 0.000 |
+| stage:layer1 | 0.670 | 0.250 | 0.270 |
+| stage:layer2 | 0.000 | 0.000 | 0.000 |
+| stage:layer3 | 0.000 | 0.000 | 0.000 |
+| stage:layer4 | 0.000 | 0.000 | 0.000 |
+| stage:head | 0.000 | 0.000 | 0.000 |
 
 ## Predictions
 
@@ -137,16 +139,16 @@ normals + controls max: {'d_mean_max': 1.509, 'd_mean_avg': 0.612}
 |---|---|---|
 | P-A1 aug turns on >= half of what test turns on (Tian-8, Tian W4A4, Ma-8): (aug, test) | {'Tian-8': (0.92, 0.92), 'Tian-W4A4': (0.83, 0.83), 'Ma-8': (1.0, 0.92)} | True |
 | P-A1 normals' agreement under aug >= .99 | 0.994 | True |
-| P-A2 staleness (mean d) family median > normals max | {'Ma-8': 0.039, 'Tian-8': 0.022, 'Tian-W4A4': 0.031, 'normals_max': 0.612} | False |
+| P-A2 staleness (mean d) family median > normals max (controls reported, not used) | {'Ma-8': 0.039, 'Tian-8': 0.022, 'Tian-W4A4': 0.031, 'normals_max': 0.059, 'controls_max': 0.612} | False |
 | P-A3 Tian: layer4 BN alone turns on >= 3/4 | [1.0, 0.92] | True |
 | P-A3 Ma-8: no single stage >= 1/4 | {'stem': 0.0, 'layer1': 0.0, 'layer2': 0.0, 'layer3': 0.0, 'layer4': 0.0} | True |
 | P-A5 batch1 test re-estimation turns on Tian-8 and Ma-8 >= 1/2 | {'Tian-8': 1.0, 'Ma-8': 1.0} | True |
 | P-B1 activation details keep >= 3/4 on | {'mom:0.01': 1.0, 'mom:0.5': 1.0, 'mom:1.0': 1.0, 'mom:minmax': 1.0, 'n:512': 1.0, 'n:2048': 1.0, 'n:10000': 1.0, 'src:def': 1.0, 'src:aug': 1.0, 'seed:1': 1.0, 'seed:2': 1.0, 'bs:32': 1.0, 'bs:512': 1.0} | True |
-| P-B2 W8A4 off in >= 3/4 | 0.29 | False |
-| P-B2 W4A8 and W4A6 on >= 1/2 | {'bits:W4A8': 0.43, 'bits:W4A6': 0.43} | False |
-| P-B3 bn:eval ASR median drop >= .2; fp_then_eval |diff| <= .1 | {'eval': 0.042, 'fp_then_eval': 0.037} | False |
-| P-B4 no single stage at W4A4 turns on >= 3/4; best = stem | {'stage:stem': 0.14, 'stage:layer1': 0.43, 'stage:layer2': 0.0, 'stage:layer3': 0.0, 'stage:layer4': 0.0, 'stage:head': 0.0} | False |
-| normals: activation-detail states agree with ref >= .97 | min median nan | False |
+| P-B2 W8A4 off in >= 3/4 | 0.48 | False |
+| P-B2 W4A8 and W4A6 on >= 1/2 | {'bits:W4A8': 0.38, 'bits:W4A6': 0.57} | False |
+| P-B3 bn:eval ASR median drop >= .2; fp_then_eval |diff| <= .1 | {'eval': 0.062, 'fp_then_eval': 0.069} | False |
+| P-B4 no single stage at W4A4 turns on >= 3/4; best = stem | {'stage:stem': 0.05, 'stage:layer1': 0.38, 'stage:layer2': 0.0, 'stage:layer3': 0.0, 'stage:layer4': 0.0, 'stage:head': 0.0} | False |
+| normals: activation-detail states agree with ref >= .97 | min median 0.796 | False |
 
 ## Falsification criteria
 

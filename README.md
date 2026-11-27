@@ -7,6 +7,7 @@
 - **진행 상황**: [docs/PROGRESS.md](docs/PROGRESS.md) (실험마다 한 줄, 1부·2부)
 - **현상·원리 종합**: [docs/PHENOMENA.md](docs/PHENOMENA.md) (1부 E01–E27 + 10절 2부 원리 정리와 10.8 후보 지도)
 - **2부 정상 성질에 기댄 단계적 의심**: [docs/STAGED.md](docs/STAGED.md) (ST 실험)
+- **차분 원리 (판 1, 11-27)**: [docs/PRINCIPLE.md](docs/PRINCIPLE.md) (F와 배포 사이의 편차로 QCB를 읽는 이론; 보조정리·명제와 검증 계획)
 
 ## 폴더
 
@@ -15,6 +16,7 @@ Principals.md, Research_Plan.md   이론·가설, 실험 계획 (사람이 쓰�
 docs/PROGRESS.md                   실험 목록과 상태
 docs/PHENOMENA.md                  현상·원리 종합 (1부 E 실험 + 10절 2부)
 docs/STAGED.md                     2부 계획과 결과 (ST 실험)
+docs/PRINCIPLE.md                  차분 원리 (증명·가정·검증 계획)
 docs/reading/                      논문 정독 노트
 cohorts/                           모델 묶음 (make_batch1.py → batch1.csv, 58개)
 src/qcbobs/                        공용 코드

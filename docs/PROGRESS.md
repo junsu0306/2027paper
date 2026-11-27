@@ -46,7 +46,7 @@
 | ST02 배포 교환가능성 검정 (계열 공통 1단계: 가중치 7형식·전체 배포 4비트·BN, 부호 무작위 16번, kl·엔트로피) | 1단계, N1·N2·N5 | 완료, 분석 작성: **기준 1 걸림** | ST02_20261126_001 (228/228) | [prediction](../experiments/ST02_exchangeability/prediction.md) · [analysis](../experiments/ST02_exchangeability/analysis.md) · [LOG](../experiments/ST02_exchangeability/LOG.md) |
 | ST03 BN 통계: 구별(낡음 비·엔트로피 변화), 위조(λ 0·.5·1)가 QCB를 망가뜨리나, 위조 뒤 남는 것 (기존 228 + 보류 batch_h 160) | 1단계, N7 후보 | 완료, 분석 작성: 기준 안 걸림 | ST03_20261126_001 (388/388) | [prediction](../experiments/ST03_bn_statistics/prediction.md) · [analysis](../experiments/ST03_bn_statistics/analysis.md) · [LOG](../experiments/ST03_bn_statistics/LOG.md) |
 | ST04 QuEST의 필요한 흔적: 필요한 층(트리거), 정류점 잔차, 잠자는 고이득 채널, 양자화 경로 내부 통계, BN 공간 섭동 (QuEST W4A4·8, 쌍둥이, 보류 batch_h) | 2단계, 위조 불가 흔적 | 완료, 분석 작성: 기준 안 걸림, **판정 기준 미달**(QuEST-8 P3 보류 .893) | ST04_20261126_002 (219/219) | [prediction](../experiments/ST04_quest_necessary_trace/prediction.md) · [analysis](../experiments/ST04_quest_necessary_trace/analysis.md) · [LOG](../experiments/ST04_quest_necessary_trace/LOG.md) |
-| ST05 배포의 활성 쪽을 과하게 돌리기: 활성 반올림 오차 × t(잡음), 깨끗한 입력의 쏠림 (QuEST W4A4, 쌍둥이, 배포를 모르는 정상, 보류 batch_h) | 2단계, 무가정 | 실행 중 | ST05_20261127_001 (0/113) | [prediction](../experiments/ST05_overdrive/prediction.md) · [LOG](../experiments/ST05_overdrive/LOG.md) |
+| ST05 배포의 활성 쪽을 과하게 돌리기: 활성 반올림 오차 × t(잡음), 깨끗한 입력의 쏠림 (QuEST W4A4, 쌍둥이, 배포를 모르는 정상, 보류 batch_h) | 2단계, 무가정 | 완료, 분석 작성: 기준 안 걸림, **판정 기준 미달**(주 점수 보류 .47). 원리는 맞음(표적 쏠림 보류 16/19, 잡음만으로 켜짐 .93) | ST05_20261127_001 (113/113) | [prediction](../experiments/ST05_overdrive/prediction.md) · [analysis](../experiments/ST05_overdrive/analysis.md) · [LOG](../experiments/ST05_overdrive/LOG.md) |
 
 ## 2026-11-25
 
@@ -100,6 +100,7 @@
 - 2026-11-26T17:09Z: [2부] ST04 예측 커밋 후 시작(다섯 측정, 작업 219개).
 - 2026-11-27T01:37Z: [2부] ST05 예측 커밋 후 시작. 사용자 지적: 가중치 잔차를 키우는 부분은 MVD 1031 PoC의 첫 실험이라 뺌. 활성 쪽 시범(기존 6개)에서 QuEST W4A4 3개는 잡음 3배에 깨끗한 입력이 각자의 표적으로, 쌍둥이 3개는 클래스 3으로 감.
 - 2026-11-27T01:46Z: [2부] ST04 완료(219/219). 판정 기준 미달. QuEST-8 고이득 채널은 대 쌍둥이 기존 .996, 보류 .893이고(ResNet18 1.00, VGG .825), 막는 채널 1위가 8/11. QuEST W4A4는 다섯 측정 모두 안 갈림. 스위치는 한 단계에 있지 않음(단계 하나 sh16으로 0).
+- 2026-11-27T03:00Z: [2부] ST05 완료(113/113). 판정 기준 미달: 쏠림 크기(S_A_3) 대 쌍둥이 보류 .47, 기존 .77 — 크기는 데이터셋·구조가 정하고 보류 구성이 달라 섞임(CIFAR-10 ResNet18만 .98). 원리는 맞음: 깨끗한 입력이 표적으로 쏠림(보류 16/19, 기존 13/21), 가중치 스위치를 꺼도 활성 잡음 2배에 백도어가 켜짐(ASR > .5: t 1 .05, t 2 .95). 사후(같은 과제의 정상 기준 필요, 복제 전 승격 금지): 방향 점수 exc 보류 대 정상 .99, 대 쌍둥이 .97; CIFAR-100·GTSRB ResNet18에서 약함.
 
 ## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
 

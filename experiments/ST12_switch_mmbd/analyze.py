@@ -116,9 +116,13 @@ def main(run):
     L += [f"QuEST W4A4 vs aware normals (Z): {auroc(qw.Z, aw.Z):.2f}; held-out {auroc(qw[qw.split == 'held-out'].Z, aw.Z):.2f}; "
           f"by z_N only: {auroc(qw.z_N, aw.z_N):.2f}", ""]
     on = q[q.asr_on_max > .5]
+
+    def best_native_cand(r):
+        st_ = max(ON, key=lambda x: r["native_" + x] if not np.isnan(r["native_" + x]) else -1)
+        return r["cand_" + st_]
+    bn = np.mean([best_native_cand(r) == r["target"] for _, r in on.iterrows()]) if len(on) else float("nan")
     L += [f"Target id (switched-on QCB, n {len(on)}): cstar == target {(on.cstar == on.target).mean():.2f}; native MM-BD on F cand "
-          f"== target {(q.cand_F == q.target).mean():.2f} (all QCB); best native on-state cand == target "
-          f"{np.mean([r[f'cand_{max(ON, key=lambda x: r[f'native_{x}'] if not np.isnan(r[f'native_{x}']) else -1)}'] == r['target'] for _, r in on.iterrows()]):.2f}"]
+          f"== target {(q.cand_F == q.target).mean():.2f} (all QCB); best native on-state cand == target {bn:.2f}"]
     for f in FAMS:
         g = on[on.fam == f]
         if len(g):

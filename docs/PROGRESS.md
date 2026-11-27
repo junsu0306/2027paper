@@ -53,6 +53,8 @@
 | ST09 잡음만으로 켜지나: 깨끗한 보정 뒤 추론에만 잡음(FP·격자 가중치), ST08 FN 재현 (QuEST 40, 쌍둥이 22) | 2단계, 참 트리거(원리) | 완료, 분석 작성: P0 맞음, **H_잡음 틀림**(추론에만 잡음 0/40, 잡음 아래 보정 36/40) | ST09_20261127_001 (62/62) | [prediction](../experiments/ST09_noise_only/prediction.md) · [analysis](../experiments/ST09_noise_only/analysis.md) · [LOG](../experiments/ST09_noise_only/LOG.md) |
 | ST10 공격 학습 체제의 정류점 잔차, 공격 계수·맞춘 계수, 클래스별 손실 분해 (ST05 코호트 113) | 2단계, 학습 데이터(상한) / 라벨 있는 방어자 데이터 | 완료, 분석 작성: 기준 2 걸림, **P1–P4 틀림** → 길을 닫음 | ST10_20261127_001 (113/113) | [prediction](../experiments/ST10_stationarity_attack_regime/prediction.md) · [analysis](../experiments/ST10_stationarity_attack_regime/analysis.md) · [LOG](../experiments/ST10_stationarity_attack_regime/LOG.md) |
 | ST11 트리거 변화와 표적의 깨끗한 공간(CSO 전제, 층별), 잡음 아래 BN만의 스위치 (ST05 코호트 113) | 2단계, 참 트리거(원리), 라벨 있는 소량 데이터 | 완료, 분석 작성: P2·P3·P4 틀림("밖"은 패치의 성질), **P5 맞음: 잡음 아래 BN만으로 38/40** | ST11_20261127_001 (113/113) | [prediction](../experiments/ST11_class_span/prediction.md) · [analysis](../experiments/ST11_class_span/analysis.md) · [LOG](../experiments/ST11_class_span/LOG.md) |
+| ST12 형식 없는 스위치 상태 × MM-BD, 켬/끔 차분 (331) | 2단계, 유도 | 완료, 분석 작성: 기준 2·3 걸림, **P3 틀림**(차분 .64, 정상 경보 51 %), P2 맞음(켠 상태 MM-BD .71) | ST12_20261127_001 (331/331) | [prediction](../experiments/ST12_switch_mmbd/prediction.md) · [analysis](../experiments/ST12_switch_mmbd/analysis.md) · [LOG](../experiments/ST12_switch_mmbd/LOG.md) |
+| ST13 K-Arm식 비대칭(모양 무관), 켬/끔 차분 (331) | 2단계, 유도 + 라벨 | 진행 중 | ST13_20261127_001 | [prediction](../experiments/ST13_karm_asymmetry/prediction.md) · [LOG](../experiments/ST13_karm_asymmetry/LOG.md) |
 
 ## 2026-11-25
 
@@ -112,6 +114,7 @@
 - 2026-11-27T08:45Z: [2부] ST08 완료(113/113, 07:47Z 시작, 사용자 제안). 판정 기준 미달: 같은 잡음이면 QuEST는 FP에서도 표적으로 가서(t 2 QA 25/40, FN 22/40) 차이에서 누출이 지워짐(보류 .29). FP 가중치 + 자르기 없는 활성 잡음만으로 켜짐(t 2 ASR .74, 36/40); 가중치 격자는 t 1에서만 중요(.88 대 .21). E15·ST05 Aoff와 함께 세 번째로 같은 결과.
 - 2026-11-27T09:40Z: [2부] ST09 완료(62/62, 09:31Z 시작, 사용자 승인 "2번"). 잡음만으로는 안 켜짐: 깨끗한 보정 뒤 추론에만 잡음 t 2 0/40(.15), 잡음 아래 보정 36/40(.74). ST08의 "활성 잡음만으로 켜짐"을 "잡음 아래 BN 재추정으로 켜짐"으로 정정(ST08 analysis.md 정정 메모). 격자 가중치만(깨끗한 BN) 18/40.
 - 2026-11-27T10:40Z: [2부] ST10·ST11 완료(각 113/113, 10:14Z 시작, 사용자 승인 "둘 다 진행해봐"). ST10: 공격 체제로 재도 대조군이 정류점에서 멀고(B .94) 표적을 못 찾음(4/40) → 정류점 잔차의 길을 닫음. ST11: CSO의 "밖"은 패치의 성질(쌍둥이 22/22), 결정 층에서 트리거 변화는 표적 공간 안(ζ .94 대 .14). 잡음 아래에서 잰 BN 통계만으로(깨끗한 추론) QuEST W4A4 38/40 켜짐.
+- 2026-11-27T15:00Z: [2부] PHENOMENA 10.8 후보 지도 기록, 문헌 조사 두 번(docs/reading). ST12 완료(331/331): 형식 없는 스위치로 QCB 143/168 켜짐. 켠 상태 MM-BD .61 → .71(Tian .98–.99), 켬/끔 차분은 실패(정상 경보 51 %). QuEST W4A4는 켜져도 MM-BD 표적 5/35. ST13(K-Arm식 비대칭) 14:53Z 시작.
 
 ## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
 

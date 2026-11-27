@@ -51,6 +51,8 @@
 | ST07 입력별 흐름: 출처의 고름, 입력별 공간 밖 몫, 라벨 변형 (ST05 코호트 113) | 2단계, 무가정(라벨 변형 따로) | 완료, 분석 작성: 기준 2·3 걸림, **판정 기준 미달**(보류 .19–.54) | ST07_20261127_001 (113/113) | [prediction](../experiments/ST07_flow/prediction.md) · [analysis](../experiments/ST07_flow/analysis.md) · [LOG](../experiments/ST07_flow/LOG.md) |
 | ST08 같은 활성 잡음을 FP와 양자화에 똑같이: 2 × 2(가중치 격자/FP × 자르기), 방어자 데이터 보정 (ST05 코호트 113) | 2단계, 무가정 | 완료, 분석 작성: 기준 2·3 걸림, **판정 기준 미달**(보류 .29, 반대 방향) | ST08_20261127_001 (113/113) | [prediction](../experiments/ST08_fp_vs_q_noise/prediction.md) · [analysis](../experiments/ST08_fp_vs_q_noise/analysis.md) · [LOG](../experiments/ST08_fp_vs_q_noise/LOG.md) |
 | ST09 잡음만으로 켜지나: 깨끗한 보정 뒤 추론에만 잡음(FP·격자 가중치), ST08 FN 재현 (QuEST 40, 쌍둥이 22) | 2단계, 참 트리거(원리) | 완료, 분석 작성: P0 맞음, **H_잡음 틀림**(추론에만 잡음 0/40, 잡음 아래 보정 36/40) | ST09_20261127_001 (62/62) | [prediction](../experiments/ST09_noise_only/prediction.md) · [analysis](../experiments/ST09_noise_only/analysis.md) · [LOG](../experiments/ST09_noise_only/LOG.md) |
+| ST10 공격 학습 체제의 정류점 잔차, 공격 계수·맞춘 계수, 클래스별 손실 분해 (ST05 코호트 113) | 2단계, 학습 데이터(상한) / 라벨 있는 방어자 데이터 | 완료, 분석 작성: 기준 2 걸림, **P1–P4 틀림** → 길을 닫음 | ST10_20261127_001 (113/113) | [prediction](../experiments/ST10_stationarity_attack_regime/prediction.md) · [analysis](../experiments/ST10_stationarity_attack_regime/analysis.md) · [LOG](../experiments/ST10_stationarity_attack_regime/LOG.md) |
+| ST11 트리거 변화와 표적의 깨끗한 공간(CSO 전제, 층별), 잡음 아래 BN만의 스위치 (ST05 코호트 113) | 2단계, 참 트리거(원리), 라벨 있는 소량 데이터 | 완료, 분석 작성: P2·P3·P4 틀림("밖"은 패치의 성질), **P5 맞음: 잡음 아래 BN만으로 38/40** | ST11_20261127_001 (113/113) | [prediction](../experiments/ST11_class_span/prediction.md) · [analysis](../experiments/ST11_class_span/analysis.md) · [LOG](../experiments/ST11_class_span/LOG.md) |
 
 ## 2026-11-25
 
@@ -109,6 +111,7 @@
 - 2026-11-27T06:52Z: [2부] ST07 완료(113/113, 06:31Z 시작). 판정 기준 미달. 누출도 몇몇 출처에서 몰리고(D 2.95, 정상 흡수 3.00) 깨끗한 특징 공간 안에 있음. 출력 수준에서 누출과 흡수 클래스를 가르는 것은 기준(정상이 어디로 가는가)뿐.
 - 2026-11-27T08:45Z: [2부] ST08 완료(113/113, 07:47Z 시작, 사용자 제안). 판정 기준 미달: 같은 잡음이면 QuEST는 FP에서도 표적으로 가서(t 2 QA 25/40, FN 22/40) 차이에서 누출이 지워짐(보류 .29). FP 가중치 + 자르기 없는 활성 잡음만으로 켜짐(t 2 ASR .74, 36/40); 가중치 격자는 t 1에서만 중요(.88 대 .21). E15·ST05 Aoff와 함께 세 번째로 같은 결과.
 - 2026-11-27T09:40Z: [2부] ST09 완료(62/62, 09:31Z 시작, 사용자 승인 "2번"). 잡음만으로는 안 켜짐: 깨끗한 보정 뒤 추론에만 잡음 t 2 0/40(.15), 잡음 아래 보정 36/40(.74). ST08의 "활성 잡음만으로 켜짐"을 "잡음 아래 BN 재추정으로 켜짐"으로 정정(ST08 analysis.md 정정 메모). 격자 가중치만(깨끗한 BN) 18/40.
+- 2026-11-27T10:40Z: [2부] ST10·ST11 완료(각 113/113, 10:14Z 시작, 사용자 승인 "둘 다 진행해봐"). ST10: 공격 체제로 재도 대조군이 정류점에서 멀고(B .94) 표적을 못 찾음(4/40) → 정류점 잔차의 길을 닫음. ST11: CSO의 "밖"은 패치의 성질(쌍둥이 22/22), 결정 층에서 트리거 변화는 표적 공간 안(ζ .94 대 .14). 잡음 아래에서 잰 BN 통계만으로(깨끗한 추론) QuEST W4A4 38/40 켜짐.
 
 ## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
 

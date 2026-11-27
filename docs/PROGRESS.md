@@ -54,7 +54,7 @@
 | ST10 공격 학습 체제의 정류점 잔차, 공격 계수·맞춘 계수, 클래스별 손실 분해 (ST05 코호트 113) | 2단계, 학습 데이터(상한) / 라벨 있는 방어자 데이터 | 완료, 분석 작성: 기준 2 걸림, **P1–P4 틀림** → 길을 닫음 | ST10_20261127_001 (113/113) | [prediction](../experiments/ST10_stationarity_attack_regime/prediction.md) · [analysis](../experiments/ST10_stationarity_attack_regime/analysis.md) · [LOG](../experiments/ST10_stationarity_attack_regime/LOG.md) |
 | ST11 트리거 변화와 표적의 깨끗한 공간(CSO 전제, 층별), 잡음 아래 BN만의 스위치 (ST05 코호트 113) | 2단계, 참 트리거(원리), 라벨 있는 소량 데이터 | 완료, 분석 작성: P2·P3·P4 틀림("밖"은 패치의 성질), **P5 맞음: 잡음 아래 BN만으로 38/40** | ST11_20261127_001 (113/113) | [prediction](../experiments/ST11_class_span/prediction.md) · [analysis](../experiments/ST11_class_span/analysis.md) · [LOG](../experiments/ST11_class_span/LOG.md) |
 | ST12 형식 없는 스위치 상태 × MM-BD, 켬/끔 차분 (331) | 2단계, 유도 | 완료, 분석 작성: 기준 2·3 걸림, **P3 틀림**(차분 .64, 정상 경보 51 %), P2 맞음(켠 상태 MM-BD .71) | ST12_20261127_001 (331/331) | [prediction](../experiments/ST12_switch_mmbd/prediction.md) · [analysis](../experiments/ST12_switch_mmbd/analysis.md) · [LOG](../experiments/ST12_switch_mmbd/LOG.md) |
-| ST13 K-Arm식 비대칭(모양 무관), 켬/끔 차분 (331) | 2단계, 유도 + 라벨 | 진행 중 | ST13_20261127_001 | [prediction](../experiments/ST13_karm_asymmetry/prediction.md) · [LOG](../experiments/ST13_karm_asymmetry/LOG.md) |
+| ST13 K-Arm식 비대칭(모양 무관), 켬/끔 차분 (331) | 2단계, 유도 + 라벨 | 완료, 분석 작성: 기준 3 걸림, **P1–P4 틀림**(AUROC .57, QuEST 표적 3/35) → 방향 닫음 | ST13_20261127_001 (331/331) | [prediction](../experiments/ST13_karm_asymmetry/prediction.md) · [analysis](../experiments/ST13_karm_asymmetry/analysis.md) · [LOG](../experiments/ST13_karm_asymmetry/LOG.md) |
 
 ## 2026-11-25
 
@@ -115,6 +115,7 @@
 - 2026-11-27T09:40Z: [2부] ST09 완료(62/62, 09:31Z 시작, 사용자 승인 "2번"). 잡음만으로는 안 켜짐: 깨끗한 보정 뒤 추론에만 잡음 t 2 0/40(.15), 잡음 아래 보정 36/40(.74). ST08의 "활성 잡음만으로 켜짐"을 "잡음 아래 BN 재추정으로 켜짐"으로 정정(ST08 analysis.md 정정 메모). 격자 가중치만(깨끗한 BN) 18/40.
 - 2026-11-27T10:40Z: [2부] ST10·ST11 완료(각 113/113, 10:14Z 시작, 사용자 승인 "둘 다 진행해봐"). ST10: 공격 체제로 재도 대조군이 정류점에서 멀고(B .94) 표적을 못 찾음(4/40) → 정류점 잔차의 길을 닫음. ST11: CSO의 "밖"은 패치의 성질(쌍둥이 22/22), 결정 층에서 트리거 변화는 표적 공간 안(ζ .94 대 .14). 잡음 아래에서 잰 BN 통계만으로(깨끗한 추론) QuEST W4A4 38/40 켜짐.
 - 2026-11-27T15:00Z: [2부] PHENOMENA 10.8 후보 지도 기록, 문헌 조사 두 번(docs/reading). ST12 완료(331/331): 형식 없는 스위치로 QCB 143/168 켜짐. 켠 상태 MM-BD .61 → .71(Tian .98–.99), 켬/끔 차분은 실패(정상 경보 51 %). QuEST W4A4는 켜져도 MM-BD 표적 5/35. ST13(K-Arm식 비대칭) 14:53Z 시작.
+- 2026-11-27T21:10Z: [2부] MVD의 11-23 교수님 피드백(A′)을 읽고, 원리 문서 docs/PRINCIPLE.md 판 1 작성(F 조건은 편차만 남김, 모양 없는 에너지 예산 집합에 패치가 포함됨, 정상의 상한, 유도가 필요한 이유). ST13 완료: 실패(AUROC .57, QuEST 표적 3/35), 강한 클래스 대칭은 데이터셋 의존(CIFAR-100 .19). 사용자 결정: 같은 모델 안의 통계 방향은 닫고 A′를 원리 위에서 개선(ST14 = 형식 없는 스위치 × F 조건 × 모양 없는 예산).
 
 ## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
 

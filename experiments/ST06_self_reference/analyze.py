@@ -65,7 +65,7 @@ def main(run):
         ns = n[n.t == sg]
         v_n = np.mean([L_(m) - L_(mR) for m in ns.m], 0)
         rec = {"model_key": mk, "split": rf.split, "kind": rf.kind, "dataset": rf.dataset, "arch": rf.arch, "target": rf.target,
-               "K": rf.K, "G": float(v_a.max()), "c_raw": int(v_a.argmax()), "sigma": sg, "kl_A3": kl_a,
+               "K": rf.K, "G": float(v_a.max()), "c_G": int(v_a.argmax()), "sigma": sg, "kl_A3": kl_a,
                "kl_N": float(kl_n[sg]), "c_N": int(v_n.argmax()),
                "exc_self": float((v_a - v_n).max()), "c_self": int((v_a - v_n).argmax()),
                "dis_self": float(1 - v_a @ v_n / (np.linalg.norm(v_a) * np.linalg.norm(v_n) + 1e-12)),
@@ -84,14 +84,14 @@ def main(run):
           f"global span rank r / d: median {np.median(s.r_glob / s.d):.2f}; outside-span share of the mean feature change "
           f"(A t 3): median {s.perp_share.median():.2f}", ""]
 
-    # ---- sinks: per dataset/arch the normal mode of c_raw
+    # ---- sinks: per dataset/arch the normal mode of the probability drift class c_G (ST05 c); fixed 2026-11-27, see LOG
     s["cell"] = s.dataset + "/" + s.arch.str.replace("16-BN", "")
-    sink = {c: g[g.kind.isin(NORMAL)].c_raw.mode().iloc[0] for c, g in s.groupby("cell")}
+    sink = {c: g[g.kind.isin(NORMAL)].c_G.mode().iloc[0] for c, g in s.groupby("cell")}
     s["sink"] = s.cell.map(sink)
-    L += ["## Sinks (normal mode of the raw drift class) and the input-noise drift class of normals", ""]
+    L += ["## Sinks (normal mode of the probability drift class c_G at A t 3) and the input-noise drift class of normals", ""]
     for c, g in s.groupby("cell"):
         n = g[g.kind.isin(NORMAL)]
-        L.append(f"{c}: sink {sink[c]}; normals n{len(n)}: c_raw == sink {(n.c_raw == n.sink).mean():.2f}, "
+        L.append(f"{c}: sink {sink[c]}; normals n{len(n)}: c_G == sink {(n.c_G == n.sink).mean():.2f}, "
                  f"c_N == sink {(n.c_N == n.sink).mean():.2f}")
     n = s[s.kind.isin(NORMAL)]
     L += [f"P1 all normals: c_N == sink {(n.c_N == n.sink).mean():.2f} (n {len(n)})", ""]
@@ -100,7 +100,7 @@ def main(run):
     SC = (("exc_self", "c_self", "(a) input-noise self-reference"), ("z_glob", "c_glob", "(b) outside the clean global span"),
           ("z_mask", "c_mask", "(b') outside class masks, R's own classes"), ("dis_self", None, "(a') 1 - cos(v_A, v_N)"),
           ("z_mask_true", "c_mask_true", "labelled: outside class masks, probe labels"), ("z_raw", "c_raw", "raw head push"),
-          ("G", "c_raw", "ST05 main score (reproduced)"))
+          ("G", "c_G", "ST05 main score (reproduced)"))
     L += ["## Scores: QuEST W4A4 vs twins / all normals (pooled over datasets; no reference models)", ""]
     for col, ccol, lab in SC:
         L.append(f"### {col}: {lab}")

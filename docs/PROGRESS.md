@@ -45,7 +45,8 @@
 | ST01 배포를 아는 모델인가 (실제 반올림 대 부호 무작위, 7개 형식, 라벨 없는 KL) | 1단계, N1·N2·N5 | 중단(사용자 지시), 분석 작성: **기준 1·2 걸림** | ST01_20261126_001 (215/228) | [prediction](../experiments/ST01_deployment_awareness/prediction.md) · [analysis](../experiments/ST01_deployment_awareness/analysis.md) · [LOG](../experiments/ST01_deployment_awareness/LOG.md) |
 | ST02 배포 교환가능성 검정 (계열 공통 1단계: 가중치 7형식·전체 배포 4비트·BN, 부호 무작위 16번, kl·엔트로피) | 1단계, N1·N2·N5 | 완료, 분석 작성: **기준 1 걸림** | ST02_20261126_001 (228/228) | [prediction](../experiments/ST02_exchangeability/prediction.md) · [analysis](../experiments/ST02_exchangeability/analysis.md) · [LOG](../experiments/ST02_exchangeability/LOG.md) |
 | ST03 BN 통계: 구별(낡음 비·엔트로피 변화), 위조(λ 0·.5·1)가 QCB를 망가뜨리나, 위조 뒤 남는 것 (기존 228 + 보류 batch_h 160) | 1단계, N7 후보 | 완료, 분석 작성: 기준 안 걸림 | ST03_20261126_001 (388/388) | [prediction](../experiments/ST03_bn_statistics/prediction.md) · [analysis](../experiments/ST03_bn_statistics/analysis.md) · [LOG](../experiments/ST03_bn_statistics/LOG.md) |
-| ST04 QuEST의 필요한 흔적: 필요한 층(트리거), 정류점 잔차, 잠자는 고이득 채널, 양자화 경로 내부 통계, BN 공간 섭동 (QuEST W4A4·8, 쌍둥이, 보류 batch_h) | 2단계, 위조 불가 흔적 | 실행 중 | ST04_20261126_002 (0/219) | [prediction](../experiments/ST04_quest_necessary_trace/prediction.md) · [LOG](../experiments/ST04_quest_necessary_trace/LOG.md) |
+| ST04 QuEST의 필요한 흔적: 필요한 층(트리거), 정류점 잔차, 잠자는 고이득 채널, 양자화 경로 내부 통계, BN 공간 섭동 (QuEST W4A4·8, 쌍둥이, 보류 batch_h) | 2단계, 위조 불가 흔적 | 완료, 분석 작성: 기준 안 걸림, **판정 기준 미달**(QuEST-8 P3 보류 .893) | ST04_20261126_002 (219/219) | [prediction](../experiments/ST04_quest_necessary_trace/prediction.md) · [analysis](../experiments/ST04_quest_necessary_trace/analysis.md) · [LOG](../experiments/ST04_quest_necessary_trace/LOG.md) |
+| ST05 배포의 활성 쪽을 과하게 돌리기: 활성 반올림 오차 × t(잡음), 깨끗한 입력의 쏠림 (QuEST W4A4, 쌍둥이, 배포를 모르는 정상, 보류 batch_h) | 2단계, 무가정 | 실행 중 | ST05_20261127_001 (0/113) | [prediction](../experiments/ST05_overdrive/prediction.md) · [LOG](../experiments/ST05_overdrive/LOG.md) |
 
 ## 2026-11-25
 
@@ -97,6 +98,8 @@
 - 2026-11-26T16:15Z: [2부] 보류 묶음 batch_h(160개: Data에 쓰지 않은 유효 모델이 많았음 — QuEST W4A4만 49개; 앞서 "QuEST W4A4는 모두 봤다"는 말은 틀렸음) 만들고 ST03 예측 커밋 후 시작. ST04(QuEST W4A4의 필요한 흔적) 코드 작성 중.
 - 2026-11-26T16:27Z: [2부] ST03 완료. BN 낡음 비(반쪽 잡음 대비)로 1단계(배포를 아는 모델)가 됨: AUROC 기존 .98, 보류 .95, 정상 2.7 %·10 % 걸림. 엔트로피 상승(N7)이 보류에서 복제: Ma·Tian QCB만, 정상·QAT·QuEST·Tian 대조군 0. 위조: Ma-8·Tian은 은폐가 깨지고 Qu-ANTI는 Q가 죽어 못 지움; QuEST W4A4(40/40)·Ma W4A4(12/12)는 흔적 없이 지움 → 위조 뒤 흔적은 가중치 쪽(ST04).
 - 2026-11-26T17:09Z: [2부] ST04 예측 커밋 후 시작(다섯 측정, 작업 219개).
+- 2026-11-27T01:37Z: [2부] ST05 예측 커밋 후 시작. 사용자 지적: 가중치 잔차를 키우는 부분은 MVD 1031 PoC의 첫 실험이라 뺌. 활성 쪽 시범(기존 6개)에서 QuEST W4A4 3개는 잡음 3배에 깨끗한 입력이 각자의 표적으로, 쌍둥이 3개는 클래스 3으로 감.
+- 2026-11-27T01:46Z: [2부] ST04 완료(219/219). 판정 기준 미달. QuEST-8 고이득 채널은 대 쌍둥이 기존 .996, 보류 .893이고(ResNet18 1.00, VGG .825), 막는 채널 1위가 8/11. QuEST W4A4는 다섯 측정 모두 안 갈림. 스위치는 한 단계에 있지 않음(단계 하나 sh16으로 0).
 
 ## 부록: 커밋 해시 대응 (2026-11-25, 옛 `docs/COMMIT_MAP.md`)
 

@@ -5,7 +5,7 @@
 - **이론과 가설**: [Principals.md](Principals.md) (가설 A–I)
 - **실험 계획**: [Research_Plan.md](Research_Plan.md) (실험 0–8)
 - **진행 상황**: [docs/PROGRESS.md](docs/PROGRESS.md) (실험마다 한 줄, 1부·2부)
-- **1부 현상·원리 분석 종합**: [docs/PHENOMENA.md](docs/PHENOMENA.md) (E01–E27, 이전 기록, 계획서 대비)
+- **현상·원리 종합**: [docs/PHENOMENA.md](docs/PHENOMENA.md) (1부 E01–E27 + 10절 2부 원리 정리와 10.8 후보 지도)
 - **2부 정상 성질에 기댄 단계적 의심**: [docs/STAGED.md](docs/STAGED.md) (ST 실험)
 
 ## 폴더
@@ -13,7 +13,7 @@
 ```
 Principals.md, Research_Plan.md   이론·가설, 실험 계획 (사람이 쓰는 문서)
 docs/PROGRESS.md                   실험 목록과 상태
-docs/PHENOMENA.md                  1부 종합 (E 실험)
+docs/PHENOMENA.md                  현상·원리 종합 (1부 E 실험 + 10절 2부)
 docs/STAGED.md                     2부 계획과 결과 (ST 실험)
 docs/reading/                      논문 정독 노트
 cohorts/                           모델 묶음 (make_batch1.py → batch1.csv, 58개)

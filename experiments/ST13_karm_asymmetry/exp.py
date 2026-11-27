@@ -30,7 +30,7 @@ N_PARTNER = 8
 ETA = .1
 T = 100
 FLIP = .9
-CHUNK = 60
+CHUNK = 24
 CHECK = (5, 10, 20, 40, 100)
 STATES = ("F", "Bfp", "C1", "N")
 

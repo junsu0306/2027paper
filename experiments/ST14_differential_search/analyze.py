@@ -44,7 +44,6 @@ def main(run):
             rec[f"asr|{s_}"], rec[f"dis|{s_}"], rec[f"dev|{s_}"], rec[f"acc|{s_}"] = s0.loc[s_, "asr"], s0.loc[s_, "dis"], s0.loc[s_, "dev"], s0.loc[s_, "acc"]
         g = lambda a: G.get(a, np.nan)  # noqa: E731
         rec["Gamma"] = np.nanmax([g("N|l2|0.25") - g("N_sign1|l2|0.25"), g("Bfp|l2|0.25") - g("Bfp_sign1|l2|0.25")])
-        rec["Gamma_sign2"] = g("N|l2|0.25") - g("N_sign2|l2|0.25")
         rec["Gamma_perm"] = g("N|l2|0.25") - g("N_perm|l2|0.25")
         rec["Gamma_N"] = g("N|l2|0.25") - g("N_sign1|l2|0.25")
         rec["G_N25"], rec["G_N10"], rec["G_Nl1"], rec["G_Npatch"] = g("N|l2|0.25"), g("N|l2|0.1"), g("N|l1|0.25"), g("N|patch|nan")
@@ -91,7 +90,7 @@ def main(run):
     L.append("")
     L += ["## AUROC (QCB higher)", "", "| score | all QCB vs normals+controls | " + " | ".join(FAMS) + " | QuEST W4A4 vs aware | held-out QuEST W4A4 vs aware |",
           "|---|---|" + "---|" * len(FAMS) + "---|---|"]
-    for sc in ("Gamma", "Gamma_N", "Gamma_sign2", "Gamma_perm", "G_F25max", "G_N25", "G_N10", "G_Nl1", "G_Npatch", "G_D_l2", "G_D_patch"):
+    for sc in ("Gamma", "Gamma_N", "Gamma_perm", "G_F25max", "G_N25", "G_N10", "G_Nl1", "G_Npatch", "G_D_l2", "G_D_patch"):
         row = [f"{auroc(q[sc], neg[sc]):.2f}"] + [f"{auroc(q[q.fam == f][sc], neg[sc]):.2f}" for f in FAMS]
         row += [f"{auroc(qw[sc], aw[sc]):.2f}", f"{auroc(qw[qw.split == 'held-out'][sc], aw[sc]):.2f}"]
         L.append(f"| {sc} | " + " | ".join(row) + " |")

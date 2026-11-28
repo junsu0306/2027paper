@@ -35,7 +35,7 @@ sys.path.insert(0, str(ROOT / "src"))
 from qcbobs import cohort, components as C, data, deploy, grids, measures as M  # noqa: E402
 from qcbobs.models import load, trigger  # noqa: E402
 
-SEL, TGT, NCAND, BATCH = 100, 300, 3, 128
+SEL, TGT, NCAND, BATCH = 80, 200, 3, 64
 PATCH_AREA = .05
 SEED = 14
 TR = {"IAO-W4A4": ["iao4"], "INT8-qnnpack": ["qnnpack8"], "W4A4-EFRAP": ["efrap4"], "IAO-W8A8": ["iao8"],
@@ -303,6 +303,7 @@ def search(S, ctx, F, norm, xo, yo, xm, ym, K, kind, beta, dev, seed):
 
 @torch.no_grad()
 def state_stats(S, ctx, F, norm, xm, test, test_y, trig, target, K):
+    xm = xm.to(test.device)
     lf, ls = F(norm(xm)), pred(S, xm, norm, ctx)
     dis = float((lf.argmax(1) != ls.argmax(1)).float().mean())
     dev_ = float((ls - lf).abs().max(1).values.mean())
@@ -316,8 +317,8 @@ def state_stats(S, ctx, F, norm, xm, test, test_y, trig, target, K):
 
 # ------------------------------------------------------------------------------------------------------------ plan
 PLAN = [("N", "l2", .10), ("N", "l2", .25), ("N", "l1", .25), ("N", "patch", None),
-        ("N_sign1", "l2", .10), ("N_sign1", "l2", .25), ("N_sign2", "l2", .25), ("N_perm", "l2", .25),
-        ("Bfp", "l2", .10), ("Bfp", "l2", .25), ("Bfp_sign1", "l2", .10), ("Bfp_sign1", "l2", .25)]
+        ("N_sign1", "l2", .10), ("N_sign1", "l2", .25), ("N_perm", "l2", .25),
+        ("Bfp", "l2", .25), ("Bfp_sign1", "l2", .25)]
 
 
 def run(job, dev):
